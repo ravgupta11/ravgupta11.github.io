@@ -1,1 +1,821 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>The blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        
+        @media only screen {
+            body {
+                background-color: #efefef;
+                margin: 0px 0px 0px 0px;
+            }
+        }
+        
+        header {
+            vertical-align: middle;
+            position: relative;
+            padding: 4em 3.5em;
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+            background-image: -webkit-linear-gradient(#16a085, #f4d03f);
+        }
+        
+        #profile_pic {
+            max-width: 80px;
+            text-align: center;
+            height: 80px;
+            margin: 0px auto;
+            background-image: url("Images/pic.jpg");
+            border-radius: 80px;
+            background-size: cover;
+        }
+        
+        #inner {
+            vertical-align: middle;
+            padding: 5vh 0vw;
+            margin: 0px auto;
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            word-wrap: break-word;
+        }
+        
+        .site-title {
+            margin: 0.5em 0 0;
+            font-size: 53.3px;
+            font-family: "Quattrocento Sans", sans-serif;
+            font-weight: 100;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .site-description {
+            margin: 0.5em 0 0;
+            font-size: 16.9px;
+            font-style: normal;
+            font-weight: 400;
+            font-family: "Alegreya Sans", sans-serif;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        #nav {
+            width: 100%;
+            margin: 0 auto;
+            border: 0.5px solid #000000;
+            border-radius: 0.75vw;
+            background-color: #fff;
+        }
+        
+        #nav ul {
+            text-align: center;
+            width: 100%;
+        }
+        
+        #nav li {
+            white-space: nowrap;
+            font-size: 1.4rem;
+            text-align: center;
+            height: 5em;
+            display: inline;
+            margin: 0 0.25em 0 0.25em;
+            font-family: "Cuprum", sans-serif !important;
+            color: #4a4a46;
+        }
+        
+        li a:link {
+            text-decoration: none;
+            color: #4a4a46;
+        }
+        
+        li a:active,
+        li a:visited {
+            text-decoration: none;
+            color: #4a4a46;
+        }
+        
+        #content-wrapper {
+            width: 95%;
+            padding: 3.5em 1.75em 3.5em;
+            margin: 0 auto;
+        }
+        
+        .leftcolumn {
+            font-size: 1.5vw;
+            float: left;
+            width: 69%;
+            border-radius: 0.75vw;
+            background-color: white;
+            padding: 20px;
+            margin: 20px 20px 0px 20px;
+        }
+        /* Right column */
+        
+        .rightcolumn {
+            font-family: sans-serif;
+            width: 26%;
+            font-size: 1vw;
+            float: left;
+            background-color: white;
+            border-radius: 0.75vw;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        
+        .rightcolumn ul {
+            list-style-type: none;
+        }
+        
+        .card {
+            clear: left;
+            width: 100%;
+            margin: 40px auto 40px;
+        }
+        
+        .titles {
+            text-align: center;
+            font-size: 2vw;
+            font-family: "Cuprum", sans-serif !important;
+            color: #4a4a46;
+        }
+        
+        .leftcolumn>ul {
+            clear: both;
+            list-style-type: none;
+        }
+        
+        .leftcolumn>ul>li>p {
+            padding: 2em;
+            border-radius: 0.75vw;
+            border: 0.2em solid #2882c7;
+        }
+        
+        .IMG {
+            text-align: center;
+            margin: 10vh auto 10vh;
+            float: left;
+        }
+        
+        .IMG img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .code {
+            margin: 10vh auto;
+        }
+        
+        @media screen and (min-width: 1500px) {
+            #content-wrapper {
+                width: 75%;
+            }
+        }
+        
+        @media screen and (max-width: 960px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                float: left;
+                padding: 20px;
+                margin: 20px 20px 0px 0px;
+                background-color: white;
+                border-radius: 0.75vw;
+            }
+            .IMG {
+                width: 50%;
+            }
+        }
+        
+        .leftcolumn,
+        .rightcolumn,
+        #nav li {
+            width: 95%;
+            margin: 20px 0px 0px 0px;
+            font-size: 1.25em;
+        }
+        
+        #content-wrapper {
+            width: 100%;
+            padding: 0px 0px 0px 0px;
+        }
+        
+        .titles {
+            font-size: 1.6em;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"]
+                ]
+            },
+            svg: {
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="inner">
+            <div id="profile_pic"></div>
+            <h1 class="site-title">Raveesh Gupta</h1>
+            <p class="site-description">A blog on sport programming</p>
+        </div>
+    </header>
+    <div id="content-wrapper">
+        <div id="nav">
+            <ul>
+                <li><a href="#basics">Graph</a></li>
+                <li><a>Geometry</a></li>
+                <li><a>DP</a></li>
+                <li><a>Math</a></li>
+                <li><a>Greedy</a></li>
+                <li><a>Probability</a></li>
+                <li><a>Number Theory</a></li>
+            </ul>
+        </div>
+        <div id="basics" class="card">
+            <div class="leftcolumn">
+                <h2 class="titles">Basics</h2>
+                <div class="IMG"><img src="Images/xkcd1.png" /></div>
+                <ul>
+                    <li>
+                        <p>
+                            Graph is a generic structure designed to support relationships. and is defined as a set of vertices $1, 2, .. n$ often labeled and edges usually written as $(vertex_1, vertex_2)$
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            $E$ is set of edges and $V$ is set of nodes. 2 vertices are adjacent if there is an edge a between those 2 vertices.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Normally we denote $|V| = n$ and $|E| = m$ where $|V|$ is cardinality (number of elements) of a set.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightcolumn">
+                <ul>
+                    <li><a href="#basics">BASICS</a></li>
+                    <li><a>DFS</a></li>
+                    <li><a>APPL: DFS</a></li>
+                    <li><a>BFS</a></li>
+                    <li><a>APPL: BFS</a></li>
+                    <li><a>DAG</a></li>
+                    <li><a>DIJKSTRA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="represent" class="c" ard>
+            <div class="leftcolumn">
+                <h2 class="titles">Representation</h2>
+                <ul>
+                    <li>
+                        <p>
+                            In algorithmic problems we use 3 ways to represent the graph.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Edge List, Adjacency List, Adjacency Matrix is the 3 common ways to represent ways to represent the graph.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            List of all edges i.e $(1, 2), (3, 4), ...$ but its not very convenient to work with.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The second way to represent the graph is the adjacent matrix. Its the simplest way to represent the matrix. Its an $n \times n$ matrix where $e_{ij} = 1$ iff there exist an edge between $i$ and $j$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There is an important observation in this matrix that diagonal elements are 0 which means there is no edge from a node to itself i.e self loop.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Another common and important way to represent a graph is called an Adjacency List. For each vertix we write down list of vertices that are incident on that vertix.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightcolumn">
+                <div class="IMG"><img src="Images/graphex.png" /></div>
+                <div class="IMG"><img src="Images/matrix.png" /></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="leftcolumn" style="width: 100%;">
+                <h2 class="titles">C++: Implementation</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Initializing the structures for un-weighted case.
+                        </p>
+                        <div class="code">
+                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;vector&gt; </span><span style="color: #888888">//We use stl:vector to make lists.</span>
+<span style="color: #557799">#include &lt;utility&gt;</span>
+<span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std; 
+<span style="color: #333399; font-weight: bold">int</span> n, m; <span style="color: #888888">// number of nodes and edges</span>
+<span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> MAXN <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">1e5</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">5</span>; <span style="color: #888888">//  maximum number of vertices possible</span>
+<span style="color: #888888">//Initializing the structures</span>
+vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> G[MAXN]; <span style="color: #888888">// an array of vectors (lists)</span>
+vector<span style="color: #333333">&lt;</span> pair<span style="color: #333333">&lt;</span> <span style="color: #333399; font-weight: bold">int</span>, <span style="color: #333399; font-weight: bold">int</span> <span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> E; <span style="color: #888888">// list of pair of values</span>
+<span style="color: #333399; font-weight: bold">bool</span> adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN initialized to 0</span>
+</pre>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Inserting edges to the structures for un-weighted and un-directed case.
+                        </p>
+                        <div class="code">
+                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> m; i<span style="color: #333333">++</span>){ 
+                <span style="color: #333399; font-weight: bold">int</span> u, v;
+                scanf(<span style="background-color: #fff0f0">&quot;%d %d&quot;</span>, <span style="color: #333333">&amp;</span>u, <span style="color: #333333">&amp;</span>v);
+                u<span style="color: #333333">--</span>; v<span style="color: #333333">--</span>; <span style="color: #888888">// if starting label of the input is 1 decrease it to make it 0.</span>
+                G[u].push_back(v);
+                G[v].push_back(u);
+                adj[u][v] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+                adj[v][u] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+                E.push_back({u, v});
+            }
+</pre>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Initializing the structures for weighted case.
+                        </p>
+                        <div>
+                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;vector&gt;</span>
+<span style="color: #557799">#include &lt;utility&gt;</span>
+<span style="color: #557799">#define ll long long</span>
+<span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std; 
+<span style="color: #333399; font-weight: bold">int</span> n, m; <span style="color: #888888">// number of nodes and edges</span>
+<span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> MAXN <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">1e5</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">5</span>; <span style="color: #888888">//  maximum number of vertices possible</span>
+<span style="color: #888888">//Initializing the structures</span>
+vector<span style="color: #333333">&lt;</span>pair<span style="color: #333333">&lt;</span> <span style="color: #333399; font-weight: bold">int</span>, ll <span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> G[MAXN]; <span style="color: #888888">// an array of vectors (lists)</span>
+vector<span style="color: #333333">&lt;</span> pair <span style="color: #333333">&lt;</span> pair<span style="color: #333333">&lt;</span> <span style="color: #333399; font-weight: bold">int</span>, <span style="color: #333399; font-weight: bold">int</span> <span style="color: #333333">&gt;</span>, ll<span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> E; <span style="color: #888888">// list of pair of values</span>
+ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN initialized to 0</span>
+</pre>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Inserting edges to the structures for weighted and un-directed case.
+                        </p>
+                        <div>
+                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> m; i<span style="color: #333333">++</span>){ 
+    <span style="color: #333399; font-weight: bold">int</span> u, v;ll w;
+    scanf(<span style="background-color: #fff0f0">&quot;%d %d %lld&quot;</span>, <span style="color: #333333">&amp;</span>u, <span style="color: #333333">&amp;</span>v, <span style="color: #333333">&amp;</span>w);
+    u<span style="color: #333333">--</span>; v<span style="color: #333333">--</span>; <span style="color: #888888">// if starting label of the input is 1 decrease it to make it 0.</span>
+    G[u].push_back({v, w});
+    G[v].push_back({u, w});
+    adj[u][v] <span style="color: #333333">=</span> w;
+    adj[v][u] <span style="color: #333333">=</span> w;
+    E.push_back({{u, v}, w});
+}
+</pre>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    What is a Cycle ?
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            A cycle is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is adjacent and $v_1$ is adjacent to $v_k$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            A cycle is simple if all vertices on it are distinct.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightcolumn">
+                <div class="IMG">
+                    <img src="Images/cycle.png" />
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="leftcolumn">
+                <h2 class="titles">What is a Path ? Path Search Problem</h2>
+                <ul>
+                    <li>
+                        <p>
+                            A path is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is adjacent.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            A path is simple if all vertices are distinct.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Given a graph $G$ and 2 vertices $s$ and $t$. Check if a path from $s$ to $t$ exists ? If it exists print the path.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Think about it as exploring a labyrinth (maze).
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightcolumn">
+                <div class="IMG">
+                    <img src="Images/path.png" />
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    What is connectivity ?
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Two nodes are connected if there exist a path between them. If I can go from one node to another using the edges of the graph.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Connected components is a set of vertices where each of 2 vertices are connected and no other vertice outside the component is connected .
+                        </p>
+                    </li>
+                </ul>
+                <div class="IMG"><img src="Images/xkcd2.png" /></div>
+            </div>
+
+            <div class="rightcolumn">
+                <div class="IMG">
+                    <img src="Images/connected.png" />
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="rightcolumn">
+                <div class="IMG">
+                    <img src="Images/dfs1.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs2.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs3.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs4.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs5.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs6.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs7.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs8.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/dfs9.png" />
+                </div>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Algorithms: DFS (Depth First Search)
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Now lets try to find all the vertices that are connected to some vertice 1.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            For ex: Imagine you are trapped in some labyrinth and you want to find out the exit door. You are in some room and don't know where the exit is.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            You try first door out of that room. You go to next room and try the first door out of that room. If once you come to a room you already been to you wont enter that room and go back. You try the second door out of the old room and traverse the labyrinth.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There are two types of basic traverses DFS and BFS. They both differ in the order of vertices visited but both of the searches traverses the graph.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            In DFS we go through the first door of the first room and then again go through the first door of he second room and similarly we go deeper and deeper till we finally encounter the place we already been. Lets try to formalize it.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Black colored directed edges forms a path tree / DFS tree
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">Pseudo Code:</h2>
+                <div class="code">
+                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%">recursive pseudo code
+visit(_fro)<span style="color: #333333">:</span>
+    mark _fro visited
+    <span style="color: #008800; font-weight: bold">for</span> all _to adjacent to _fro<span style="color: #333333">:</span>
+        <span style="color: #008800; font-weight: bold">if</span> _to is not visited<span style="color: #333333">:</span>
+            visit(_to)
+
+iterative pseudo code
+visit(src)<span style="color: #333333">:</span>
+    initialize stack with src
+    stack <span style="color: #333333">:=</span> {src}
+    <span style="color: #008800; font-weight: bold">while</span> stack is not empty<span style="color: #333333">:</span>
+        _fro <span style="color: #333333">:=</span> stack.pop()
+        <span style="color: #008800; font-weight: bold">if</span> _fro is not visited<span style="color: #333333">:</span>
+            mark _fro visited
+            <span style="color: #008800; font-weight: bold">for</span> all _to adjacent to _fro<span style="color: #333333">:</span>
+                push _to to stack
+                
+</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    C++ Implementation
+                </h2>
+                <div class="code">
+                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%">recursive definition
+<span style="color: #333399; font-weight: bold">bool</span> vis[MAXN];
+<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> n; i<span style="color: #333333">++</span>) vis[i] <span style="color: #333333">=</span> <span style="color: #007020">false</span>;
+
+<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> n; i<span style="color: #333333">++</span>) <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>vis[i]) dfs(i);
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dfs</span>(<span style="color: #333399; font-weight: bold">int</span> fro){
+    vis[fro] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+    <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> to<span style="color: #333333">:</span> G[fro]){
+        <span style="color: #008800; font-weight: bold">if</span>(vis[to]) <span style="color: #008800; font-weight: bold">continue</span>;
+        dfs(to);
+    }
+}
+
+iterative approach
+<span style="color: #333399; font-weight: bold">bool</span> vis[MAXN];
+<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> n; i<span style="color: #333333">++</span>) vis[i] <span style="color: #333333">=</span> <span style="color: #007020">false</span>;
+
+<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> n; i<span style="color: #333333">++</span>) <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>vis[i]) dfs(i);
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dfs</span>(<span style="color: #333399; font-weight: bold">int</span> src){
+    vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> stack;
+    stack.push_back(src);
+    <span style="color: #008800; font-weight: bold">while</span>( <span style="color: #333333">!</span>stack.empty() ){
+        <span style="color: #333399; font-weight: bold">int</span> fro <span style="color: #333333">=</span> stack.pop_back();
+        <span style="color: #008800; font-weight: bold">if</span>(vis[fro]) <span style="color: #008800; font-weight: bold">continue</span>;
+        vis[fro] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> to<span style="color: #333333">:</span> G[fro]) stack.push_back(to);
+    }
+}
+</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    What is the complexity of this algorithm
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            It depends upon how we represent the graph. If we store thegraph as a adjacency matrix its $O(n^2)$. If its stored in adjacency list its $O(n+m)$. Why?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We visit each vertix only once because the in recursive procedure dfs is only called for vertices which is not yet visited and when its called vis[] of the vertice is set true and for each vertice the visit mark is set true only once.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If we store the graph in the adjacency matrix , we have to traverse through all the matrix and find the vertices that are adjacent tofro. For each vertice it takes $O(n)$ to find its adjacent vertices and in total $O(n^2)$ for all vertices.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If we store the graph in adjacency list its $O(n+m)$, and for eachvertice, we can find the adjacent vertice in $O(1)$. and for eachvertice we can touch each adjacent node from it exactly once.and for each vertice we can use each edge going from it exactly
+                            once. So if all vertices and edges are touched once so its $O(n+m)$.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Pseudo Code: DFS with colors and time
+                </h2>
+                <div class="code">
+                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%">function dfs(u, p):
+        parent[u] :<span style="color: #333333">=</span> p
+        color[u] :<span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        tin[u] :<span style="color: #333333">=</span> T<span style="color: #333333">++</span>
+        <span style="color: #008800; font-weight: bold">for</span> each v, v adjacent to u:
+            <span style="color: #008800; font-weight: bold">if</span> color[v] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> :
+                dfs(v, u)
+        color[u] :<span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span>
+        tout[u] :<span style="color: #333333">=</span> T<span style="color: #333333">++</span>
+    main:
+        parent[] :<span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
+        parent[s] :<span style="color: #333333">=</span> s <span style="color: #333333">//</span> arbitrary source
+        color[] :<span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        <span style="color: #008800; font-weight: bold">for</span> each i vertex:
+            <span style="color: #008800; font-weight: bold">if</span> color[i] <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">2</span> :
+                dfs(i,i)
+</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Properties of Times
+                </h2>
+
+                <ul>
+                    <li>
+                        <p>
+                            For any u and v time segments [tin[u], tout[u]] and [tin[v], tout[v]].
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            if[tin[u], tout[u]]is nested in[tin[v], tout[v]]means thatuis a de-scendant ofvandvis a ancestor ofuin the DFS / PATH tree.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            if[tin[u], tout[u]]and[tin[v], tout[v]]do not intersect - meaning uand v are not comparable.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Type Of Edges:
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            These classifications are often used for problems like finding bridges and finding articulation points.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Tree Edges : Edges going from GRAY to WHITE vertex in the DFS tree.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Backward Edges : Edges going from GRAY to GRAY vertex in the DFS tree.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
+                            a forward edge.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree. if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other words, if we already visited and exited v and entry[u] entry[v] then
+                            (u,v) is a cross edge.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Look on the times tin / tout to choose forward or cross.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Cycle Detection: Application of DFS
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY vertex (careful with un-directed graph skip the edge from which you came to the current)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Why can’t we go from go from a current vertex to a black vertex? Because when we mark the vertex a as black we processed all its edges that out go this vertex and we should have processed all adjacent vertex B that’s the reason we can’t reach a black
+                            vertex from the current node and whenever we find a cycle its always an edge from current node to a gray node.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Make sure you distinguish between a cycle and going back to the parent. A separate par in the dfs definition i.e visit(fro, par) because you need to remember where you came from.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Path Tree
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Path Tree is an outgoing tree routed at s. Path tree covers all vertices reachable from s.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            parent[u] = u for root vertex u = src
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            parent[u] = −1 for unreachable vertices u
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            parent[u] = v if v is the previous vertex for u on the path from from s to u.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            pseudo code to restore path
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in other languages then just don’t care.
+                        </p>
+                    </li>
+                </ul>
+                <div class="code">
+                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%">function pathTo(t):
+    path :<span style="color: #333333">=</span> []
+    <span style="color: #008800; font-weight: bold">while</span> parent[t] <span style="color: #333333">!=</span> t: <span style="color: #333333">//</span>t <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> root
+        push t to path structure
+        t :<span style="color: #333333">=</span> parent[t] <span style="color: #333333">//</span> go towards root
+    push t to path <span style="color: #333333">//</span> t <span style="color: #000000; font-weight: bold">is</span> root
+    reverse(path) 
+    <span style="color: #008800; font-weight: bold">return</span> path
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
