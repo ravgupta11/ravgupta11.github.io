@@ -19,8 +19,7 @@
             }
         };
     </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -35,7 +34,7 @@
         <div id="nav">
             <ul>
                 <li><a href="../index.html">Graph</a></li>
-                <li><a>Geometry</a></li>
+                <li><a href="#1d">Geometry</a></li>
                 <li><a>DP</a></li>
                 <li><a>Math</a></li>
                 <li><a>Greedy</a></li>
@@ -43,7 +42,7 @@
                 <li><a>Number Theory</a></li>
             </ul>
         </div>
-        <div id="" class="card">
+        <div id="1d" class="card">
             <div class="leftcolumn">
                 <h2 class="titles">
                     1-D Geometry Examples
@@ -51,9 +50,7 @@
                 <ul>
                     <li>
                         <p>
-                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$.
-                            Check
-                            if there is a point belonging to each of them? Is there intersection is non empty? </p>
+                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$. Check if there is a point belonging to each of them? Is there intersection is non empty? </p>
                     </li>
                 </ul>
             </div>
@@ -66,16 +63,15 @@
                 <ul>
                     <li>
                         <p>
-                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their
-                            intersection.
+                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their intersection.
                         </p>
                     </li>
                     <li>
                         <p>
-                            $$
-                            L = min(l_1, l_2), R = max(r_2, r_1)
-                            \text{ if $L >= R$ then the segments are intersecting}
-                            $$
+                            $$ L = min(l_1, l_2), R = max(r_2, r_1) $$
+                        </p>
+                        <p>
+                            $$ \text{ if $L >= R$ then the segments are intersecting} $$
                         </p>
                     </li>
                     <li>
@@ -89,54 +85,26 @@
         <div id="" class="card">
             <div class="leftcolumn">
                 <h4 class="titles">
-                    2-D Geometry introduction
-                </h4>
-                <ul>
-                    <li>
-                        <p>
-                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $
-                            std:pair $ or struct to implement their representation.
-
-                        </p>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <div id="" class="card">
-            <div class="leftcolumn">
-                <h4 class="titles">
                     General Rules
                 </h4>
                 <ul>
                     <li>
                         <p>
-                            Floating point nature of geometrical problems means that the input data is mostly floating
-                            point calculations. Use integer data types when input data is integers. Integers overflow is
-                            to be considered since in geometry problems, numbers grow very quickly.
+                            Floating point nature of geometrical problems means that the input data is mostly floating point calculations. Use integer data types when input data is integers. Integers overflow is to be considered since in geometry problems, numbers grow very quickly.
                         </p>
                     </li>
                     <li>
                         <p>
-                            In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data
-                            type reduces the probability that you have overflow problem. But long double takes more time
-                            to do basic operations. </p>
+                            In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data type reduces the probability that you have overflow problem. But long double takes more time to do basic operations. </p>
                     </li>
                     <li>
                         <p>
-                            All calculations in floating points are not exact, for ex: - $$
-                            0.1 + 0.1 != 0.2
-                            $$
-                            because it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to
-                            compare two values.
-
-
-                            <div class="code">
-                                <script
-                                    src="https://gist.github.com/ravgupta11/d3b7b1758a06548837d8f2f16cd83b67.js"></script>
-                            </div>
+                            All calculations in floating points are not exact, for ex: - $$ 0.1 + 0.1 != 0.2 $$ because it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to compare two values.
                         </p>
                     </li>
+                    <div class="code">
+                        <script src="https://gist.github.com/ravgupta11/d3b7b1758a06548837d8f2f16cd83b67.js"></script>
+                    </div>
                     <li>
                         <p>
                             In binary search and in sorting in has exception but that also sometimes.
@@ -144,11 +112,25 @@
                     </li>
                     <li>
                         <p>
-                            Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a
-                            run-time error.
-
-                            So we adopt following rule, </p>
+                            Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a run-time error. So we adopt following rule, </p>
                         <script src="https://gist.github.com/ravgupta11/25e880cefedf3bc6f83f6139a6910f6a.js"></script>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <h4 class="titles">
+                    2-D Geometry introduction
+                </h4>
+                <ul>
+                    <li>
+                        <p>
+                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $ std:pair $ or struct to implement their representation.
+
+                        </p>
                     </li>
 
                 </ul>
