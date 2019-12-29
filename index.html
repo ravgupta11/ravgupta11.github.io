@@ -498,123 +498,123 @@ iterative approach
                 </ul>
             </div>
             <div class="rightcolumn">
-                <img src="Images/time1.png" />
-                <img src="Images/time2.png" />
-                <img src="Images/time3.png" />
-                <img src="Images/time5.png" />
-                <img src="Images/time4.png" />
-                <img src="Images/time6.png" />
-                <img src="Images/time7.png" />
-                <img src="Images/time8.png" />
-                <img src="Images/times9.png" />
-            </div>>
-            <div class="leftcolumn">
-                <h2 class="titles">
-                    Type Of Edges:
-                </h2>
-                <ul>
-                    <li>
-                        <p>
-                            These classifications are often used for problems like finding bridges and finding articulation points.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Tree Edges : Edges going from GRAY to WHITE vertex in the DFS tree.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Backward Edges : Edges going from GRAY to GRAY vertex in the DFS tree.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
-                            a forward edge.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree. if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other words, if we already visited and exited v and entry[u] entry[v] then
-                            (u,v) is a cross edge.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Look on the times tin / tout to choose forward or cross.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="leftcolumn">
-                <h2 class="titles">
-                    Cycle Detection: Application of DFS
-                </h2>
-                <ul>
-                    <li>
-                        <p>
-                            Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY vertex (careful with un-directed graph skip the edge from which you came to the current)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Why can’t we go from go from a current vertex to a black vertex? Because when we mark the vertex a as black we processed all its edges that out go this vertex and we should have processed all adjacent vertex B that’s the reason we can’t reach a black
-                            vertex from the current node and whenever we find a cycle its always an edge from current node to a gray node.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Make sure you distinguish between a cycle and going back to the parent. A separate par in the dfs definition i.e visit(fro, par) because you need to remember where you came from.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="rightcolumn">
-                <div>
-                    <img src="Images/cycle2.png" />
-                </div>
-            </div>
+                <div class="IMG"><img src="Images/time1.png" /> </div>
+                <div class="IMG"></div><img src="Images/time2.png" /></div>
+            <div class="IMG"></div><img src="Images/time3.png" /></div>
+        <div class="IMG"></div><img src="Images/time5.png" /></div>
+    <div class="IMG"></div><img src="Images/time4.png" /></div>
+    <div class="IMG"></div><img src="Images/time6.png" /></div>
+    <div class="IMG"></div><img src="Images/time7.png" /></div>
+    <div class="IMG"></div><img src="Images/time8.png" /></div>
+    <div class="IMG"></div><img src="Images/times9.png" /></div>
+    </div>>
+    <div class="leftcolumn">
+        <h2 class="titles">
+            Type Of Edges:
+        </h2>
+        <ul>
+            <li>
+                <p>
+                    These classifications are often used for problems like finding bridges and finding articulation points.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Tree Edges : Edges going from GRAY to WHITE vertex in the DFS tree.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Backward Edges : Edges going from GRAY to GRAY vertex in the DFS tree.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
+                    a forward edge.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree. if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other words, if we already visited and exited v and entry[u] entry[v] then
+                    (u,v) is a cross edge.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Look on the times tin / tout to choose forward or cross.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="leftcolumn">
+        <h2 class="titles">
+            Cycle Detection: Application of DFS
+        </h2>
+        <ul>
+            <li>
+                <p>
+                    Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY vertex (careful with un-directed graph skip the edge from which you came to the current)
+                </p>
+            </li>
+            <li>
+                <p>
+                    Why can’t we go from go from a current vertex to a black vertex? Because when we mark the vertex a as black we processed all its edges that out go this vertex and we should have processed all adjacent vertex B that’s the reason we can’t reach a black
+                    vertex from the current node and whenever we find a cycle its always an edge from current node to a gray node.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Make sure you distinguish between a cycle and going back to the parent. A separate par in the dfs definition i.e visit(fro, par) because you need to remember where you came from.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="rightcolumn">
+        <div>
+            <img src="Images/cycle2.png" />
         </div>
-        <div class="leftcolumn">
-            <h2 class="titles">
-                Path Tree
-            </h2>
-            <ul>
-                <li>
-                    <p>
-                        Path Tree is an outgoing tree routed at s. Path tree covers all vertices reachable from s.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        parent[u] = u for root vertex u = src
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        parent[u] = −1 for unreachable vertices u
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        parent[u] = v if v is the previous vertex for u on the path from from s to u.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        pseudo code to restore path
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in other languages then just don’t care.
-                    </p>
-                </li>
-            </ul>
-            <div class="code">
-                <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                    <pre style="margin: 0; line-height: 125%">function pathTo(t):
+    </div>
+    </div>
+    <div class="leftcolumn">
+        <h2 class="titles">
+            Path Tree
+        </h2>
+        <ul>
+            <li>
+                <p>
+                    Path Tree is an outgoing tree routed at s. Path tree covers all vertices reachable from s.
+                </p>
+            </li>
+            <li>
+                <p>
+                    parent[u] = u for root vertex u = src
+                </p>
+            </li>
+            <li>
+                <p>
+                    parent[u] = −1 for unreachable vertices u
+                </p>
+            </li>
+            <li>
+                <p>
+                    parent[u] = v if v is the previous vertex for u on the path from from s to u.
+                </p>
+            </li>
+            <li>
+                <p>
+                    pseudo code to restore path
+                </p>
+            </li>
+            <li>
+                <p>
+                    Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in other languages then just don’t care.
+                </p>
+            </li>
+        </ul>
+        <div class="code">
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                <pre style="margin: 0; line-height: 125%">function pathTo(t):
     path :<span style="color: #333333">=</span> []
     <span style="color: #008800; font-weight: bold">while</span> parent[t] <span style="color: #333333">!=</span> t: <span style="color: #333333">//</span>t <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> root
         push t to path structure
@@ -623,9 +623,9 @@ iterative approach
     reverse(path) 
     <span style="color: #008800; font-weight: bold">return</span> path
 </pre>
-                </div>
             </div>
         </div>
+    </div>
     </div>
     <div id="#directed" class="card">
         <!-- Repeated element on each chapter-->
