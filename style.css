@@ -116,7 +116,7 @@ li a:visited {
     font-family: sans-serif;
     width: 26%;
     font-size: 1vw;
-    float: left;
+    float: right;
     background-color: white;
     border-radius: 0.75vw;
     padding: 20px;
@@ -128,7 +128,7 @@ li a:visited {
 }
 
 .card {
-    clear: left;
+    clear: both;
     width: 100%;
     margin: 40px auto 40px;
 }
@@ -141,7 +141,6 @@ li a:visited {
 }
 
 .leftcolumn>ul {
-    clear: both;
     list-style-type: none;
 }
 

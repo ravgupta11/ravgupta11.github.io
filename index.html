@@ -45,7 +45,6 @@
         <div id="basics" class="card">
             <div class="leftcolumn">
                 <h2 class="titles">Basics</h2>
-                <div class="IMG"><img src="Images/xkcd1.png" /></div>
                 <ul>
                     <li>
                         <p>
@@ -74,6 +73,7 @@
                     <li><a>DAG</a></li>
                     <li><a>DIJKSTRA</a></li>
                 </ul>
+                <div class="IMG"><img src="Images/xkcd1.png" /></div>
             </div>
         </div>
         <div id="represent" class="card">
@@ -276,7 +276,7 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                         </p>
                     </li>
                 </ul>
-                <div class="IMG"><img src="Images/xkcd2.png" /></div>
+
             </div>
 
             <div class="rightcolumn">
@@ -447,33 +447,26 @@ iterative approach
                     </li>
                 </ul>
             </div>
+            <div class="rightcolumn">
+                <div class="IMG"><img src="Images/time1.png" /> </div>
+                <div class="IMG"><img src="Images/time2.png" /></div>
+                <div class="IMG"><img src="Images/time3.png" /></div>
+                <div class="IMG"><img src="Images/time5.png" /></div>
+                <div class="IMG"><img src="Images/time4.png" /></div>
+                <div class="IMG"><img src="Images/time6.png" /></div>
+                <div class="IMG"><img src="Images/time7.png" /></div>
+                <div class="IMG"><img src="Images/time8.png" /></div>
+                <div class="IMG"><img src="Images/times9.png" /></div>
+            </div>
             <div class="leftcolumn">
                 <h2 class="titles">
                     Pseudo Code: DFS with colors and time
                 </h2>
-                <div class="code">
-                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                        <pre style="margin: 0; line-height: 125%">function dfs(u, p):
-        parent[u] :<span style="color: #333333">=</span> p
-        color[u] :<span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>
-        tin[u] :<span style="color: #333333">=</span> T<span style="color: #333333">++</span>
-        <span style="color: #008800; font-weight: bold">for</span> each v, v adjacent to u:
-            <span style="color: #008800; font-weight: bold">if</span> color[v] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> :
-                dfs(v, u)
-        color[u] :<span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span>
-        tout[u] :<span style="color: #333333">=</span> T<span style="color: #333333">++</span>
-    main:
-        parent[] :<span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
-        parent[s] :<span style="color: #333333">=</span> s <span style="color: #333333">//</span> arbitrary source
-        color[] :<span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
-        <span style="color: #008800; font-weight: bold">for</span> each i vertex:
-            <span style="color: #008800; font-weight: bold">if</span> color[i] <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">2</span> :
-                dfs(i,i)
-</pre>
-                    </div>
-                </div>
-            </div>
 
+                <div class="code">
+                    <script src="https://gist.github.com/ravgupta11/2a74b377e79027449f10528be00bfce7.js"></script>
+                </div>
+            </div>>
             <div class="leftcolumn">
                 <h2 class="titles">
                     Properties of Times
@@ -497,124 +490,112 @@ iterative approach
                     </li>
                 </ul>
             </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Type Of Edges:
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            These classifications are often used for problems like finding bridges and finding articulation points.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Tree Edges : Edges going from GRAY to WHITE vertex in the DFS tree.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Backward Edges : Edges going from GRAY to GRAY vertex in the DFS tree.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
+                            a forward edge.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree. if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other words, if we already visited and exited v and entry[u] entry[v] then
+                            (u,v) is a cross edge.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Look on the times tin / tout to choose forward or cross.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Cycle Detection: Application of DFS
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY vertex (careful with un-directed graph skip the edge from which you came to the current)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Why can’t we go from go from a current vertex to a black vertex? Because when we mark the vertex a as black we processed all its edges that out go this vertex and we should have processed all adjacent vertex B that’s the reason we can’t reach a black
+                            vertex from the current node and whenever we find a cycle its always an edge from current node to a gray node.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Make sure you distinguish between a cycle and going back to the parent. A separate par in the dfs definition i.e visit(fro, par) because you need to remember where you came from.
+                        </p>
+                    </li>
+                </ul>
+            </div>
             <div class="rightcolumn">
-                <div class="IMG"><img src="Images/time1.png" /> </div>
-                <div class="IMG"></div><img src="Images/time2.png" /></div>
-            <div class="IMG"></div><img src="Images/time3.png" /></div>
-        <div class="IMG"></div><img src="Images/time5.png" /></div>
-    <div class="IMG"></div><img src="Images/time4.png" /></div>
-    <div class="IMG"></div><img src="Images/time6.png" /></div>
-    <div class="IMG"></div><img src="Images/time7.png" /></div>
-    <div class="IMG"></div><img src="Images/time8.png" /></div>
-    <div class="IMG"></div><img src="Images/times9.png" /></div>
-    </div>>
-    <div class="leftcolumn">
-        <h2 class="titles">
-            Type Of Edges:
-        </h2>
-        <ul>
-            <li>
-                <p>
-                    These classifications are often used for problems like finding bridges and finding articulation points.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Tree Edges : Edges going from GRAY to WHITE vertex in the DFS tree.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Backward Edges : Edges going from GRAY to GRAY vertex in the DFS tree.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
-                    a forward edge.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree. if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other words, if we already visited and exited v and entry[u] entry[v] then
-                    (u,v) is a cross edge.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Look on the times tin / tout to choose forward or cross.
-                </p>
-            </li>
-        </ul>
-    </div>
-    <div class="leftcolumn">
-        <h2 class="titles">
-            Cycle Detection: Application of DFS
-        </h2>
-        <ul>
-            <li>
-                <p>
-                    Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY vertex (careful with un-directed graph skip the edge from which you came to the current)
-                </p>
-            </li>
-            <li>
-                <p>
-                    Why can’t we go from go from a current vertex to a black vertex? Because when we mark the vertex a as black we processed all its edges that out go this vertex and we should have processed all adjacent vertex B that’s the reason we can’t reach a black
-                    vertex from the current node and whenever we find a cycle its always an edge from current node to a gray node.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Make sure you distinguish between a cycle and going back to the parent. A separate par in the dfs definition i.e visit(fro, par) because you need to remember where you came from.
-                </p>
-            </li>
-        </ul>
-    </div>
-    <div class="rightcolumn">
-        <div>
-            <img src="Images/cycle2.png" />
-        </div>
-    </div>
-    </div>
-    <div class="leftcolumn">
-        <h2 class="titles">
-            Path Tree
-        </h2>
-        <ul>
-            <li>
-                <p>
-                    Path Tree is an outgoing tree routed at s. Path tree covers all vertices reachable from s.
-                </p>
-            </li>
-            <li>
-                <p>
-                    parent[u] = u for root vertex u = src
-                </p>
-            </li>
-            <li>
-                <p>
-                    parent[u] = −1 for unreachable vertices u
-                </p>
-            </li>
-            <li>
-                <p>
-                    parent[u] = v if v is the previous vertex for u on the path from from s to u.
-                </p>
-            </li>
-            <li>
-                <p>
-                    pseudo code to restore path
-                </p>
-            </li>
-            <li>
-                <p>
-                    Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in other languages then just don’t care.
-                </p>
-            </li>
-        </ul>
-        <div class="code">
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                <pre style="margin: 0; line-height: 125%">function pathTo(t):
+                <div>
+                    <img src="Images/cycle2.png" />
+                </div>
+            </div>
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Path Tree
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Path Tree is an outgoing tree routed at s. Path tree covers all vertices reachable from s.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            parent[u] = u for root vertex u = src
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            parent[u] = −1 for unreachable vertices u
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            parent[u] = v if v is the previous vertex for u on the path from from s to u.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            pseudo code to restore path
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in other languages then just don’t care.
+                        </p>
+                    </li>
+                </ul>
+                <div class="code">
+                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%">function pathTo(t):
     path :<span style="color: #333333">=</span> []
     <span style="color: #008800; font-weight: bold">while</span> parent[t] <span style="color: #333333">!=</span> t: <span style="color: #333333">//</span>t <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> root
         push t to path structure
@@ -623,243 +604,245 @@ iterative approach
     reverse(path) 
     <span style="color: #008800; font-weight: bold">return</span> path
 </pre>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div id="#directed" class="card">
-        <!-- Repeated element on each chapter-->
-        <div class="leftcolumn">
-            <h2 class="titles">
-                Directed case
-            </h2>
-            <ul>
-                <li>
-                    <p>
-                        Adjacency matrix is not symmetric in this case.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        There can be directed relationships, like if person A can be a friend of person B but not true the other way around.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        There can be similar problems like if $u$ is reachable from vertex $v$.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        We can extract connected components from the directed graph. They are called Strongly connected components.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Let's try finding a cycle in a directed case. From 1 to 2 and 2 to 3 marks 3 visited and 2 visited and goes 1 to 3 and finds 3 visited and says its a cycle. but there was'nt.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Lets try explicitly state colors with 3 values. 0 means WHITE not yet visited, 1 means gray means visited but not processed, 2 means BLACK means visited an processed.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        A cycle only exists only if we go from current node to a gray node.
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <div class="rightcolumn">
-            <div class="IMG"><img src="Images/cycle3.png" /></div>
-        </div>
-    </div>
-    <div id="shortest" class="card">
-        <!-- Repeated element on each chapter-->
-        <div class="leftcolumn">
-            <h2 class="titles">
-                Shortest Path Problem: Directed or un-directed graph
-            </h2>
-            <ul>
-                <li>
-                    <p>
-                        Given a graph G find the shortest path between a pair of vertices $s$ and $t$.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        All the edges in my graph is same length.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Lets discuss a simpler but an inefficient algorithm to solve this problem called Flood Fill
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        We say the best distance from s to s is 0.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Next step is that we consider all adjacent vertices of $s$. and decide that the distance to them is 1. This is so called the first layer.
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Now I want to enumerate all those vertices with distance 1 and assign them distance one more than my current distance. There might be some problem that some vertices at level 2 might be adjacent to several vertices from the level 1. TO keep things simple
-                        I will just need to assign those vertices which are yet unassigned.
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Eventually this way we will cover all the vertices of the connected component that has the vertex $s$.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        There are efficient algorithms that does exactly the same thing but a bit faster.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        When we have several layers to the bottom and we meet some vertex with length 3 and is connected to some vertex length 1. we would like to assign length 4 to it but this situation will never happen. Why ?
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Since we are enumerating vertices in increasing order of the layers, so the vertex with length 3 would actually have assigned a length of 2 since it was connected with a vertex of length 1.
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <div class="rightcolumn">
-            <div class="IMG"> <img src="Images/bfs0.png"></div>
-            <div class="IMG"> <img src="Images/bfs1.png"> </div>
-            <div class="IMG"> <img src="Images/bfs2.png"> </div>
-        </div>
-    </div>
-    <div id="optimization" class="card">
-        <!-- Repeated element on each chapter-->
-        <div class="leftcolumn">
-            <h2 class="titles">
-                Optimization by Queue
-            </h2>
-            <ul>
-                <li>
-                    <p>
-                        Lets understand how to find those levels efficiently. We will use a data structure called a queue. Queue uses FIFO strategy, which is first in and first out. It behaves like a normal queue in front of a ticket booth.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        I have to maintain the queue with initial entry $s$ and I have to maintain a distances[] array to store the distance from $s$. Assume all vertices except $s$ has a very big distance $10^9 + 7$ and s having distance 0.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        First thing to do is, to extract a vertex from the queue and we process it. what do we do in processing? To process the vertex I look through all the outgoing edges of this vertex and I try to relax the big distance( $10^9 + 7$) from s to its neighbours
-                        to something smaller.
-                </li>
-                <li>
-                    <p>
-                        In our case from $s$ we can go to $a$ , $b$ , $c$ in 1 step, so I update their distance to 1 and push all the updated vertices to the queue. Now the vertex $s$ is processed.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The next step is to extract the next vertex from the queue and repeat the same procedure and try to relax (make smaller ) those distances which are larger than current + 1.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Eventually all the vertices in the connected component is assigned.
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="" class="card">
-        <!-- Repeated element on each chapter-->
-        <div class="leftcolumn">
-            <h2 class="titles">
-                What is the proof of correctness ?
-            </h2>
-            <ul>
-                <li>
-                    <p>
-                        Why does it works ?
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        There are 2 observations.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        All vertices will eventually in the queue
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        All vertices will be in the queue exactly once
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        There cannot be a situation where we relax a vertex and put it in the queue and relax it twice and put it in the queue again.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Lets say a vertex $x$ whose has an edge to a vertex $v$ which has some distance $5$ and $x$ has distance $6$ and there also exist a vertex $u$ which already has a distance say $3$ and also want to relax (make better) distance for $x$ and relax it to 4.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Why cannot this situation happen ?
-                    </p>
-                </li>
-            </ul>
-            <li>
-                <p>
-                    <div class="IMG">
-                        <img src="Images/bfs3.png" />
                     </div>
-                </p>
-            </li>
-            <li>
-                <p>
-                    Because $u$ will be processed first than $v$ as we are processing in increasing order of levels/ layers/ distances. That proves the correctness
-                </p>
-            </li>
-        </div>
-    </div>
-    <div id="complexity" class="card">
-        <!-- Repeated element on each chapter-->
-        <div class="leftcolumn">
-            <h2 class="titles">
-                What is the complexity of this algorithm ?
-            </h2>
-            <ul>
-                <li>
-                    <p>
-                        Running time in $O(n + m)$ if we use adjacency list and its $O(n^2 + m)$ if we use adjacency matrices since we push all vertices will be in the queue exactly once .
-                    </p>
-                </li>
-            </ul>
-            <div class="code">
-                <script src="https://gist.github.com/ravgupta11/ac0111e43f2e81a56e4e2e0cda1c6564.js"></script>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+        <div id="directed" class="card">
+            <!-- Repeated element on each chapter-->
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Directed case
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Adjacency matrix is not symmetric in this case.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There can be directed relationships, like if person A can be a friend of person B but not true the other way around.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There can be similar problems like if $u$ is reachable from vertex $v$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We can extract connected components from the directed graph. They are called Strongly connected components.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Let's try finding a cycle in a directed case. From 1 to 2 and 2 to 3 marks 3 visited and 2 visited and goes 1 to 3 and finds 3 visited and says its a cycle. but there was'nt.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Lets try explicitly state colors with 3 values. 0 means WHITE not yet visited, 1 means gray means visited but not processed, 2 means BLACK means visited an processed.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            A cycle only exists only if we go from current node to a gray node.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightcolumn">
+                <div class="IMG"><img src="Images/cycle3.png" /></div>
+                <div class="IMG"><img src="Images/xkcd2.png" /></div>
+            </div>
+        </div>
+        <div id="shortest" class="card">
+            <!-- Repeated element on each chapter-->
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Shortest Path Problem: Directed or un-directed graph
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Given a graph G find the shortest path between a pair of vertices $s$ and $t$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            All the edges in my graph is same length.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Lets discuss a simpler but an inefficient algorithm to solve this problem called Flood Fill
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We say the best distance from s to s is 0.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Next step is that we consider all adjacent vertices of $s$. and decide that the distance to them is 1. This is so called the first layer.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Now I want to enumerate all those vertices with distance 1 and assign them distance one more than my current distance. There might be some problem that some vertices at level 2 might be adjacent to several vertices from the level 1. TO keep things simple
+                            I will just need to assign those vertices which are yet unassigned.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Eventually this way we will cover all the vertices of the connected component that has the vertex $s$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There are efficient algorithms that does exactly the same thing but a bit faster.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            When we have several layers to the bottom and we meet some vertex with length 3 and is connected to some vertex length 1. we would like to assign length 4 to it but this situation will never happen. Why ?
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Since we are enumerating vertices in increasing order of the layers, so the vertex with length 3 would actually have assigned a length of 2 since it was connected with a vertex of length 1.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightcolumn">
+                <div class="IMG"> <img src="Images/bfs0.png"></div>
+                <div class="IMG"> <img src="Images/bfs1.png"> </div>
+                <div class="IMG"> <img src="Images/bfs2.png"> </div>
+            </div>
+        </div>
+        <div id="optimization" class="card">
+            <!-- Repeated element on each chapter-->
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    Optimization by Queue
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Lets understand how to find those levels efficiently. We will use a data structure called a queue. Queue uses FIFO strategy, which is first in and first out. It behaves like a normal queue in front of a ticket booth.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            I have to maintain the queue with initial entry $s$ and I have to maintain a distances[] array to store the distance from $s$. Assume all vertices except $s$ has a very big distance $10^9 + 7$ and s having distance 0.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            First thing to do is, to extract a vertex from the queue and we process it. what do we do in processing? To process the vertex I look through all the outgoing edges of this vertex and I try to relax the big distance( $10^9 + 7$) from s to its neighbours
+                            to something smaller.
+                    </li>
+                    <li>
+                        <p>
+                            In our case from $s$ we can go to $a$ , $b$ , $c$ in 1 step, so I update their distance to 1 and push all the updated vertices to the queue. Now the vertex $s$ is processed.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The next step is to extract the next vertex from the queue and repeat the same procedure and try to relax (make smaller ) those distances which are larger than current + 1.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Eventually all the vertices in the connected component is assigned.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="proof" class="card">
+            <div class="rightcolumn">
+                <div class="IMG">
+                    <img src="Images/bfs4.png" />
+                </div>
+                <div class="IMG">
+                    <img src="Images/bfs3.png" />
+                </div>
+            </div>
+            <!-- Repeated element on each chapter-->
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    What is the proof of correctness ?
+                </h2>
+                <ul>
+                    <li>
+                        <p>
+                            Why does it works ?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There are 2 observations.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            All vertices will eventually in the queue
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            All vertices will be in the queue exactly once
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There cannot be a situation where we relax a vertex and put it in the queue and relax it twice and put it in the queue again.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Lets say a vertex $x$ whose has an edge to a vertex $v$ which has some distance $5$ and $x$ has distance $6$ and there also exist a vertex $u$ which already has a distance say $3$ and also want to relax (make better) distance for $x$ and relax it to 4.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Why cannot this situation happen ?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Because $u$ will be processed first than $v$ as we are processing in increasing order of levels/ layers/ distances. That proves the correctness
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="complexity" class="card">
+                <!-- Repeated element on each chapter-->
+                <div class="leftcolumn">
+                    <h2 class="titles">
+                        What is the complexity of this algorithm ?
+                    </h2>
+                    <ul>
+                        <li>
+                            <p>
+                                Running time in $O(n + m)$ if we use adjacency list and its $O(n^2 + m)$ if we use adjacency matrices since we push all vertices will be in the queue exactly once .
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <script src="https://gist.github.com/ravgupta11/ac0111e43f2e81a56e4e2e0cda1c6564.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
