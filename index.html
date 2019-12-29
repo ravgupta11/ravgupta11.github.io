@@ -34,7 +34,7 @@
         <div id="nav">
             <ul>
                 <li><a href="#basics">Graph</a></li>
-                <li><a>Geometry</a></li>
+                <li><a href="geometry/geometry.html">Geometry</a></li>
                 <li><a>DP</a></li>
                 <li><a>Math</a></li>
                 <li><a>Greedy</a></li>
@@ -64,14 +64,21 @@
                 </ul>
             </div>
             <div class="rightcolumn">
+                <h2 class="titles">Quick Links</h2>
                 <ul>
-                    <li><a href="#basics">BASICS</a></li>
-                    <li><a>DFS</a></li>
-                    <li><a>APPL: DFS</a></li>
-                    <li><a>BFS</a></li>
-                    <li><a>APPL: BFS</a></li>
-                    <li><a>DAG</a></li>
-                    <li><a>DIJKSTRA</a></li>
+                    <li><a href="#basics">Basics</a></li>
+                    <li><a href="#represent">Representations</a></li>
+                    <li><a href="#cycle">What is a cycle ?</a></li>
+                    <li><a href="#path">What is a path ? </a></li>
+                    <li><a href="#connectivity">Connectivity</a></li>
+                    <li><a href="#dfs">Depth First Search</a></li>
+                    <li><a href="#cycledet">Cycle Detection</a></li>
+                    <li><a href="#pathtree">Path tree</a></li>
+                    <li><a href="#directed">Cycles in directed graphs</a></li>
+                    <li><a href="#shortest">Shortest path problem</a></li>
+                    <li><a href="#optimization">Optimization by BFS</a></li>
+                    <li> <a href="#proof">Proof of correctness</a></li>
+                    <li> <a href="#complexity">complexity</a></li>
                 </ul>
                 <div class="IMG"><img src="Images/xkcd1.png" /></div>
             </div>
@@ -203,7 +210,7 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 </ul>
             </div>
         </div>
-        <div class="card">
+        <div id="cycle" class="card">
             <div class="leftcolumn">
                 <h2 class="titles">
                     What is a Cycle ?
@@ -227,7 +234,7 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div id="path" class="card">
             <div class="leftcolumn">
                 <h2 class="titles">What is a Path ? Path Search Problem</h2>
                 <ul>
@@ -259,7 +266,7 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div id="connectivity" class="card">
             <div class="leftcolumn">
                 <h2 class="titles">
                     What is connectivity ?
@@ -285,7 +292,7 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div id="dfs" class="card">
             <div class="rightcolumn">
                 <div class="IMG">
                     <img src="Images/dfs1.png" />
@@ -421,7 +428,7 @@ iterative approach
             </div>
             <div class="leftcolumn">
                 <h2 class="titles">
-                    What is the complexity of this algorithm
+                    What is the complexity of this algorithm ?
                 </h2>
                 <ul>
                     <li>
@@ -529,7 +536,7 @@ iterative approach
                     </li>
                 </ul>
             </div>
-            <div class="leftcolumn">
+            <div id="cycledet" class="leftcolumn">
                 <h2 class="titles">
                     Cycle Detection: Application of DFS
                 </h2>
@@ -557,7 +564,7 @@ iterative approach
                     <img src="Images/cycle2.png" />
                 </div>
             </div>
-            <div class="leftcolumn">
+            <div id="pathtree" class="leftcolumn">
                 <h2 class="titles">
                     Path Tree
                 </h2>
