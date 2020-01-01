@@ -19,7 +19,8 @@
             }
         };
     </script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -52,7 +53,9 @@
                 <ul>
                     <li>
                         <p>
-                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$. Check if there is a point belonging to each of them? Is there intersection is non empty? </p>
+                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$.
+                            Check if there is a point belonging to each of them? Is there intersection is non empty?
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -65,7 +68,8 @@
                 <ul>
                     <li>
                         <p>
-                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their intersection.
+                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their
+                            intersection.
                         </p>
                     </li>
                     <li>
@@ -92,16 +96,22 @@
                 <ul>
                     <li>
                         <p>
-                            Floating point nature of geometrical problems means that the input data is mostly floating point calculations. Use integer data types when input data is integers. Integers overflow is to be considered since in geometry problems, numbers grow very quickly.
+                            Floating point nature of geometrical problems means that the input data is mostly floating
+                            point calculations. Use integer data types when input data is integers. Integers overflow is
+                            to be considered since in geometry problems, numbers grow very quickly.
                         </p>
                     </li>
                     <li>
                         <p>
-                            In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data type reduces the probability that you have overflow problem. But long double takes more time to do basic operations. </p>
+                            In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data
+                            type reduces the probability that you have overflow problem. But long double takes more time
+                            to do basic operations. </p>
                     </li>
                     <li>
                         <p>
-                            All calculations in floating points are not exact, for ex: - $$ 0.1 + 0.1 != 0.2 $$ because it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to compare two values.
+                            All calculations in floating points are not exact, for ex: - $$ 0.1 + 0.1 != 0.2 $$ because
+                            it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to compare
+                            two values.
                         </p>
                     </li>
                     <div class="code">
@@ -114,10 +124,25 @@
                     </li>
                     <li>
                         <p>
-                            Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a run-time error. So we adopt following rule, </p>
+                            Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a
+                            run-time error. So we adopt following rule, </p>
                         <script src="https://gist.github.com/ravgupta11/25e880cefedf3bc6f83f6139a6910f6a.js"></script>
                     </li>
-
+                    <li><p>
+                        In-accuracy of double also applies in square root function $sqrt(val)$ .
+                    </p></li>
+                    <li>
+                        <!--#TODO: add git code gist for this code
+                        #include <cmath>
+                        abl val = ......sin of some value ...
+                        dbl a = sqrtl(val) \\ might show some runtime error
+                        
+                        .
+                        .
+                        .
+                        
+                        a = sqrtl(max(val, 0.00LL)); -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -130,7 +155,8 @@
                 <ul>
                     <li>
                         <p>
-                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $ std:pair $ or struct to implement their representation.
+                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $
+                            std:pair $ or struct to implement their representation.
 
                         </p>
                     </li>
@@ -138,6 +164,200 @@
                 </ul>
             </div>
         </div>
+
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <h4 class="titles">
+                    Basic Operations</h4>
+                <ul>
+                    <li>
+                        <p>
+                            1. Find squared length of a vector.<br>
+                            dbl len2(pt p){
+                            return p.x*p.x + p.y*p.y;
+                            }
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            2. Find length of a vector.
+                            <br>
+                            dbl len(pt p){
+                            return sqrt(len2(p));
+                            }
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            3. Normalize the vector.
+                            <br>
+                            pt norm(pt p){
+                            dbl lenp = len(p);
+                            return {p.x/lenp,p.y/lenp};
+                            }
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            4 Rotate a vector.
+                            <br>
+                            pt rotate(pt p,dbl a){
+                            return {cos(a)*p.x-sin(a)*p.y, cos(a)*p.y+sin(a)*p.x};}
+                            }
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <h4 class="titles">Properties of Dot(scalar) Product</h4>
+                <ul>
+                    <li>
+                        <p>
+                            $p.q = dot(p, q)= p.X*q.X + p.Y*q.Y=cos(pq)*|p|*|q|$
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Return scalar, not vector
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Equals 0 $iff$ vectors $p$ and $q$ are orthogonal.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Positive is angle is acute, negative angle is obtuse.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Signed length of projection of $p$ on $q$ is $|p|*cos(pq)$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Symmetrical in nature: $dot(p,q) = dot(q,p)$.
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <h4 class="titles">Applications of Dot Product</h4>
+                <ul>
+                    <li>
+                        <p>
+                            <!-- #TODO: sth about \emp showing in browser -->
+                            You are given a segment $A(x_1, y_1)$ and $B(x_1, y_1)$ and a point $P(x_3, y_3)$. check if
+                            a point is orthogonal to segment $AB$.\emp{Solution:- Calculate the vectors $AB$ and $AP$.
+                            Calculate the dot product of $AB$ and $AP$ and it will be positive $iff$ if the angle is
+                            acute. Check for similar case for B. It is important to check the same for B.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            You are given a circle with center $O(p, q)$ and a point on the circle $A(x_1, y_1)$ and a
+                            point $P(x, y)$. You have to check whether you can see $P$ from $A$.
+                            Calculate $OA$ and $AP$ if the dot product is non-positive which means the angle is obtuse
+                            or right angle hence you can see A from B.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Re-calculation of point P on co-ordinate system of $A$ and $B$ vectors. Solution:- $$P =
+                            \alpha. A + \beta . B$$ and $\alpha = \frac{dot(P,A)}{|A|^2}$ and similar for $\beta$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Calculate signed angle between vectors $p$ and $q$, $$cos(pq) = |p||q|/dot(p,q)$$
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Calculate orthogonal vector from a vector $A$ in 2-D plane.$$ A = <b, a> B = <-a, b> C = <a,
+                                        -b>$$.
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <ul><li><p>
+                    <!-- #Review: does this looks fine? -->
+                    $p\times q = cross(p, q)= p.X*q.Y - p.Y*q.X=sin(pq)*|p|*|q|$</p></li></ul>
+                    <!-- #Review: added of Cross Product -->
+                    <h4 class="titles">Properties of Cross Product</h4>
+                <ul>
+                    <li><p>
+                        <!-- #Reviw: You sure it's not vector -->
+                        Returns scalar not a vector
+                    </p></li>
+                    
+                    <li><p>
+                        Equals 0 $iff$ vectors are co-linear.
+                    </p></li>
+                    
+                    <li><p>
+                        Absolute value of cross products is area of a parallelogram.
+                    </p></li>
+                    
+                    <li><p>
+                        Positive $iff$ one should rotate $p$ counterclockwise (in shortest way)to make sure its in the same direction of $q$. same goes for clockwise. in one case vector p is on right side of vector q and in another case vector p is on left side.
+                    </p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <h4 class="titles">Applications of Cross Product</h4>
+            <ul>
+                <li><p>
+                <!-- #TODO:Fill this  -->
+                </p></li>
+            </ul>
+            </div>
+        </div>
+        <div id="" class="card">
+            <div class="leftcolumn">
+                <h4 class="titles">Lines</h4>
+            <ul>
+                <li><p>
+                    Lines are defined by:
+                    $$
+                    Ax +By+C = 0
+                    $$
+                     where A!=0 or/and B !=0.
+                </p></li>
+                <li><p>
+                    Vector $<A, B>$ is a normal vector. Also $<-A, -B>$ is other normal vector.
+                </p></li>
+                <li><p>
+                    Vector $<B, -A>$ is a directing vector, also $<-B, A>$ is a directing vector.
+                </p></li>
+                <li><p>
+                    Distance from point to a line is $$D = \frac{|Ax+By+C|}{\sqrt{A^2 + B^2}}.$$ .
+                </p></li>
+                <li><p>
+                    Sign matters as they give the side of a point with respect to the line.
+                </p></li>
+            </ul>
+            </div>
+        </div>
+
 
     </div>
 </body>
