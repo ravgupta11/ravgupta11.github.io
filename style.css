@@ -127,7 +127,7 @@ li a:visited {
 .rightcolumn ul {
     list-style-type: square;
     font-family: "Cuprum", sans-serif !important;
-    font-size: 2.5em;
+    font-size: 2.5vw;
 }
 
 .card {
