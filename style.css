@@ -116,8 +116,8 @@ li a:visited {
 
 .rightcolumn {
     font-family: sans-serif;
-    width: 26%;
-    font-size: 1.5vw;
+    width: 25%;
+    font-size: 1.5em;
     float: right;
     background-color: white;
     border-radius: 0.75vw;
