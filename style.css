@@ -117,7 +117,6 @@ li a:visited {
 .rightcolumn {
     font-family: sans-serif;
     width: 25%;
-    font-size: 1.5em;
     float: right;
     background-color: white;
     border-radius: 0.75vw;
@@ -126,9 +125,9 @@ li a:visited {
 }
 
 .rightcolumn ul {
-    list-style-type: disc;
+    list-style-type: square;
     font-family: "Cuprum", sans-serif !important;
-    font-size: 1.6vh;
+    font-size: 2.5em;
 }
 
 .card {
