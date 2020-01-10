@@ -19,8 +19,7 @@
             }
         };
     </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -53,8 +52,7 @@
                 <ul>
                     <li>
                         <p>
-                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$.
-                            Check if there is a point belonging to each of them? Is there intersection is non empty?
+                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$. Check if there is a point belonging to each of them? Is there intersection is non empty?
                         </p>
                     </li>
                 </ul>
@@ -68,8 +66,7 @@
                 <ul>
                     <li>
                         <p>
-                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their
-                            intersection.
+                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their intersection.
                         </p>
                     </li>
                     <li>
@@ -96,22 +93,16 @@
                 <ul>
                     <li>
                         <p>
-                            Floating point nature of geometrical problems means that the input data is mostly floating
-                            point calculations. Use integer data types when input data is integers. Integers overflow is
-                            to be considered since in geometry problems, numbers grow very quickly.
+                            Floating point nature of geometrical problems means that the input data is mostly floating point calculations. Use integer data types when input data is integers. Integers overflow is to be considered since in geometry problems, numbers grow very quickly.
                         </p>
                     </li>
                     <li>
                         <p>
-                            In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data
-                            type reduces the probability that you have overflow problem. But long double takes more time
-                            to do basic operations. </p>
+                            In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data type reduces the probability that you have overflow problem. But long double takes more time to do basic operations. </p>
                     </li>
                     <li>
                         <p>
-                            All calculations in floating points are not exact, for ex: - $$ 0.1 + 0.1 != 0.2 $$ because
-                            it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to compare
-                            two values.
+                            All calculations in floating points are not exact, for ex: - $$ 0.1 + 0.1 != 0.2 $$ because it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to compare two values.
                         </p>
                     </li>
                     <div class="code">
@@ -124,8 +115,7 @@
                     </li>
                     <li>
                         <p>
-                            Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a
-                            run-time error. So we adopt following rule, </p>
+                            Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a run-time error. So we adopt following rule, </p>
                         <script src="https://gist.github.com/ravgupta11/25e880cefedf3bc6f83f6139a6910f6a.js"></script>
                     </li>
                     <li>
@@ -157,8 +147,7 @@
                 <ul>
                     <li>
                         <p>
-                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $
-                            std:pair $ or struct to implement their representation.
+                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $ std:pair $ or struct to implement their representation.
 
                         </p>
                     </li>
@@ -246,25 +235,19 @@
                     <li>
                         <p>
                             <!-- #TODO: sth about \emp showing in browser -->
-                            You are given a segment $A(x_1, y_1)$ and $B(x_1, y_1)$ and a point $P(x_3, y_3)$. check if
-                            a point is orthogonal to segment $AB$.\emp{Solution:- Calculate the vectors $AB$ and $AP$.
-                            Calculate the dot product of $AB$ and $AP$ and it will be positive $iff$
-                            if the angle is acute. Check for similar case for B. It is important to check the same for
-                            B.
+                            You are given a segment $A(x_1, y_1)$ and $B(x_1, y_1)$ and a point $P(x_3, y_3)$. check if a point is orthogonal to segment $AB$.\emp{Solution:- Calculate the vectors $AB$ and $AP$. Calculate the dot product of $AB$ and $AP$ and it will be positive $iff$
+                            if the angle is acute. Check for similar case for B. It is important to check the same for B.
                         </p>
                     </li>
                     <li>
                         <p>
-                            You are given a circle with center $O(p, q)$ and a point on the circle $A(x_1, y_1)$ and a
-                            point $P(x, y)$. You have to check whether you can see $P$ from $A$. Calculate $OA$ and $AP$
-                            if the dot product is non-positive which means the angle is obtuse
+                            You are given a circle with center $O(p, q)$ and a point on the circle $A(x_1, y_1)$ and a point $P(x, y)$. You have to check whether you can see $P$ from $A$. Calculate $OA$ and $AP$ if the dot product is non-positive which means the angle is obtuse
                             or right angle hence you can see A from B.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Re-calculation of point P on co-ordinate system of $A$ and $B$ vectors. Solution:- $$P =
-                            \alpha. A + \beta . B$$ and $\alpha = \frac{dot(P,A)}{|A|^2}$ and similar for $\beta$.
+                            Re-calculation of point P on co-ordinate system of $A$ and $B$ vectors. Solution:- $$P = \alpha. A + \beta . B$$ and $\alpha = \frac{dot(P,A)}{|A|^2}$ and similar for $\beta$.
                         </p>
                     </li>
                     <li>
@@ -291,7 +274,7 @@
                     <li>
                         <p>
                             <!-- #Review: does this looks fine? -->
-                            $p\times q = cross(p, q)= p.X*q.Y - p.Y*q.X=sin(pq)*|p|*|q|$</p>
+                            $ p\times q = cross(p, q)= p.X*q.Y - p.Y*q.X=sin(pq)*|p|*|q| $</p>
                     </li>
                 </ul>
                 <!-- #Review: added of Cross Product -->
@@ -318,9 +301,7 @@
 
                     <li>
                         <p>
-                            Positive $iff$ one should rotate $p$ counterclockwise (in shortest way)to make sure its in
-                            the same direction of $q$. same goes for clockwise. in one case vector p is on right side of
-                            vector q and in another case vector p is on left side.
+                            Positive $iff$ one should rotate $p$ counterclockwise (in shortest way)to make sure its in the same direction of $q$. same goes for clockwise. in one case vector p is on right side of vector q and in another case vector p is on left side.
                         </p>
                     </li>
                 </ul>
@@ -379,22 +360,13 @@
                     <li>
                         <p>
                             <!-- -----Review: Not showing properly------ -->
-                            The first step to find the intersection is to find the situation , normally we don't have a
-                            intersection if lines are parallel or concise. Calculate the cross product of normal vectors
-                            of each line. if the $cross(<A_1, B_1>, <A_2, B_2>)$ is $0$ then it is parallel or concise.
+                            The first step to find the intersection is to find the situation , normally we don't have a intersection if lines are parallel or concise. Calculate the cross product of normal vectors of each line. if the $ cross( &lt A_1, B_1 &rt, &lt A_2, B_2 &rt)
+                            $ is $0$ then it is parallel or concise.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Next step is to find the point using Cramer's rule.
-
-                            $$
-                            x = -\frac{det(C_1, B_1, C_2, B_2)}{det(A_1, B_1, A_2, B_2)}
-                            $$
-                            and
-                            $$
-                            y = -\frac{det(A_1, C_1, A_2, C_2)}{det(A_1, B_1, A_2, B_2)}
-                            $$
+                            Next step is to find the point using Cramer's rule. $$ x = -\frac{det(C_1, B_1, C_2, B_2)}{det(A_1, B_1, A_2, B_2)} $$ and $$ y = -\frac{det(A_1, C_1, A_2, C_2)}{det(A_1, B_1, A_2, B_2)} $$
                         </p>
                     </li>
                     <li>
@@ -411,37 +383,27 @@
                 <ul>
                     <li>
                         <p>
-                            Segment and Segment intersect their bounding boxes should also intersect converse is not
-                            true. But its also possible that segments does not intersect but their bounding boxes
-                            intersect.
+                            Segment and Segment intersect their bounding boxes should also intersect converse is not true. But its also possible that segments does not intersect but their bounding boxes intersect.
                         </p>
                     </li>
                     <li>
                         <p>
                             To check if the segments do not intersect only one of the conditions need to be true.
                             <!-- -----Review: Not showing properly------ -->
-                            $$
-                            max(p1.X, q1.X) < min(p2.X, q2.X) || min(p1.X, q1.X)> max(p2.X, q2.X)
-                                $$
+                            $$ max(p1.X, q1.X) &lt min(p2.X, q2.X) $$ or $$ min(p1.X, q1.X) &rt max(p2.X, q2.X) $$
                         </p>
                     </li>
                     <li>
                         <p>
                             Check if the first segment is strictly left to the second one or to the strictly right.
                             <!-- -----Review: Not showing properly------ -->
-                            $$
-                            max(p1.Y, q1.Y) < min(p2.Y, q2.Y) || min(p1.Y, q1.Y)> max(p2.Y, q2.Y)
-                                $$
+                            $$ max(p1.Y, q1.Y) &lt min(p2.Y, q2.Y) $$ or $$ min(p1.Y, q1.Y) &rt max(p2.Y, q2.Y) $$
                         </p>
                     </li>
                     <li>
                         <p>
-                            Even if the bounding boxes intersect its possible that the segment do not intersect. Check
-                            if
-
-                            $$cross(p_1q_1, p_1q_2) \times cross(p_1q_1, p_1p_2) > 0$$ or $$cross(p_2q_2,
-                            p_2q_1) \times cross(p_2q_2, p_2q_2) > 0$$ then segments do not intersect. Otherwise they do
-                            intersect.}
+                            Even if the bounding boxes intersect its possible that the segment do not intersect. Check if $$cross(p_1q_1, p_1q_2) \times cross(p_1q_1, p_1p_2) > 0$$ or $$cross(p_2q_2, p_2q_1) \times cross(p_2q_2, p_2q_2) > 0$$ then segments do not intersect. Otherwise
+                            they do intersect.}
                         </p>
                     </li>
                 </ul>
@@ -461,23 +423,14 @@
                         <p>
                             <!-- -----Review: Not showing properly------ -->
 
-                            Find the $cross(<A_1, B_1>, <A_2, B_2>)$ of normal vectors, if its zero then the segments
-                                    must coincide. Check if the endpoints of the first segment lie on the second segment
-                                    or vice-versa.
+                            Find the $ cross( &lt A_1, B_1 &rt, &lt A_2, B_2 &rt) $ of normal vectors, if its zero then the segments must coincide. Check if the endpoints of the first segment lie on the second segment or vice-versa.
                         </p>
                     </li>
                     <li>
                         <p>
                             <!-- -----Review: Not showing properly------ -->
 
-                            if $cross(<A_1, B_1>, <A_2, B_2>)$ not zero then construct lines
-                                    $$
-                                    L_1 = (A_1, B_1, C_1)
-                                    $$
-                                    $$
-                                    L_2 = (A_2, B_2, C_2)
-                                    $$
-                                    and find their intersection using Cramer's Rule.
+                            if cross( &lt A_1, B_1 &rt, &lt A_2, B_2 &rt) not zero then construct lines $$ L_1 = (A_1, B_1, C_1) $$ $$ L_2 = (A_2, B_2, C_2) $$ and find their intersection using Cramer's Rule.
                         </p>
                     </li>
                 </ul>
