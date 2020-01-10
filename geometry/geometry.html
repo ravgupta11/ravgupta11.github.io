@@ -235,8 +235,8 @@
                     <li>
                         <p>
                             <!-- #TODO: sth about \emp showing in browser -->
-                            You are given a segment $A(x_1, y_1)$ and $B(x_1, y_1)$ and a point $P(x_3, y_3)$. check if a point is orthogonal to segment $AB$.\emp{Solution:- Calculate the vectors $AB$ and $AP$. Calculate the dot product of $AB$ and $AP$ and it will be positive $iff$
-                            if the angle is acute. Check for similar case for B. It is important to check the same for B.
+                            You are given a segment $A(x_1, y_1)$ and $B(x_1, y_1)$ and a point $P(x_3, y_3)$. check if a point is orthogonal to segment $AB$. </p>
+                        <p> <em> Solution: </em> - Calculate the vectors $AB$ and $AP$. Calculate the dot product of $AB$ and $AP$ and it will be positive $iff$ if the angle is acute. Check for similar case for B. It is important to check the same for B.
                         </p>
                     </li>
                     <li>
@@ -257,10 +257,7 @@
                     </li>
                     <li>
                         <p>
-                            Calculate orthogonal vector from a vector $A$ in 2-D plane.$$ A =
-                            <b, a> B =
-                                <-a, b> C =
-                                    <a, -b>$$.
+                            Calculate orthogonal vector from a vector $A$ in 2-D plane. $$ A = &lt b, a> $$ $$B = &lt -a, b>$$ $$C = &lt a, -b>$$.
                         </p>
                     </li>
 
@@ -274,7 +271,7 @@
                     <li>
                         <p>
                             <!-- #Review: does this looks fine? -->
-                            $ p\times q = cross(p, q)= p.X*q.Y - p.Y*q.X=sin(pq)*|p|*|q| $</p>
+                            $ p\times q = cross(p, q)= p.X*q.Y - p.Y*q.X = sin(pq)*|p|*|q| $ </p>
                     </li>
                 </ul>
                 <!-- #Review: added of Cross Product -->
@@ -331,12 +328,12 @@
                     </li>
                     <li>
                         <p>
-                            Vector $&ltA, B&rt$ is a normal vector. Also $&lt-A, -B&rt$ is other normal vector.
+                            Vector $ &lt A, B >$ is a normal vector. Also $ &lt -A, -B >$ is other normal vector.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Vector $&ltB, -A&rt$ is a directing vector, also $&lt-B, A$rt$ is a directing vector.
+                            Vector $&ltB, -A >$ is a directing vector, also $&lt-B, A >$ is a directing vector.
                         </p>
                     </li>
                     <li>
@@ -360,8 +357,8 @@
                     <li>
                         <p>
                             <!-- -----Review: Not showing properly------ -->
-                            The first step to find the intersection is to find the situation , normally we don't have a intersection if lines are parallel or concise. Calculate the cross product of normal vectors of each line. if the $ cross( &lt A_1, B_1 &rt, &lt A_2, B_2 &rt)
-                            $ is $0$ then it is parallel or concise.
+                            The first step to find the intersection is to find the situation , normally we don't have a intersection if lines are parallel or concise. Calculate the cross product of normal vectors of each line. if the $ cross( &lt A_1, B_1 >, &lt A_2, B_2 >) $ is
+                            $0$ then it is parallel or concise.
                         </p>
                     </li>
                     <li>
@@ -390,14 +387,14 @@
                         <p>
                             To check if the segments do not intersect only one of the conditions need to be true.
                             <!-- -----Review: Not showing properly------ -->
-                            $$ max(p1.X, q1.X) &lt min(p2.X, q2.X) $$ or $$ min(p1.X, q1.X) &rt max(p2.X, q2.X) $$
+                            $$ max(p1.X, q1.X) &lt min(p2.X, q2.X) $$ or $$ min(p1.X, q1.X) > max(p2.X, q2.X) $$
                         </p>
                     </li>
                     <li>
                         <p>
                             Check if the first segment is strictly left to the second one or to the strictly right.
                             <!-- -----Review: Not showing properly------ -->
-                            $$ max(p1.Y, q1.Y) &lt min(p2.Y, q2.Y) $$ or $$ min(p1.Y, q1.Y) &rt max(p2.Y, q2.Y) $$
+                            $$ max(p1.Y, q1.Y) &lt min(p2.Y, q2.Y) $$ or $$ min(p1.Y, q1.Y) > max(p2.Y, q2.Y) $$
                         </p>
                     </li>
                     <li>
@@ -423,14 +420,14 @@
                         <p>
                             <!-- -----Review: Not showing properly------ -->
 
-                            Find the $ cross( &lt A_1, B_1 &rt, &lt A_2, B_2 &rt) $ of normal vectors, if its zero then the segments must coincide. Check if the endpoints of the first segment lie on the second segment or vice-versa.
+                            Find the $ cross( &lt A_1, B_1 >, &lt A_2, B_2 >) $ of normal vectors, if its zero then the segments must coincide. Check if the endpoints of the first segment lie on the second segment or vice-versa.
                         </p>
                     </li>
                     <li>
                         <p>
                             <!-- -----Review: Not showing properly------ -->
 
-                            if cross( &lt A_1, B_1 &rt, &lt A_2, B_2 &rt) not zero then construct lines $$ L_1 = (A_1, B_1, C_1) $$ $$ L_2 = (A_2, B_2, C_2) $$ and find their intersection using Cramer's Rule.
+                            if $cross( &lt A_1, B_1 >, &lt A_2, B_2 >)$ not zero then construct lines $$ L_1 = (A_1, B_1, C_1) $$ $$ L_2 = (A_2, B_2, C_2) $$ and find their intersection using Cramer's Rule.
                         </p>
                     </li>
                 </ul>
