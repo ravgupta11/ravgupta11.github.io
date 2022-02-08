@@ -111,6 +111,16 @@ li a:visited {
     margin: 20px 20px 0px 20px;
 }
 
+.about {
+    font-size: 1.1vw;
+    float: left;
+    width: 69%;
+    border-radius: 0.75vw;
+    background-color: white;
+    padding: 20px;
+    margin: 20px 20px 0px 20px;
+}
+
 
 /* Right column */
 
