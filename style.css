@@ -24,7 +24,7 @@ header {
     text-align: center;
     height: 80px;
     margin: 0px auto;
-    background-image: url("Images/pic.jpg");
+    background-image: url("Images/pic.JPG");
     border-radius: 80px;
     background-size: cover;
 }
@@ -75,7 +75,7 @@ header {
 #nav li {
     width: auto;
     white-space: nowrap;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
     padding: 10px 10px 10px 10px;
     display: inline-block;
@@ -209,4 +209,14 @@ li a:visited {
     .titles {
         font-size: 1.6em;
     }
+}
+
+.pdf-container{
+    width: 100%;
+}
+.pdf-container embed{
+    width: 90%;
+    margin-left: 5%;
+    height: 660px;
+    margin-top: 50px;
 }

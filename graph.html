@@ -31,19 +31,7 @@
         </div>
     </header>
     <div id="content-wrapper">
-        <div id="nav">
-            <ul>
-                <li><a href="#basics">Graph</a></li>
-                <li><a href="geometry/geometry.html">Geometry</a></li>
-                <li><a>DP</a></li>
-                <li><a>Math</a></li>
-                <li><a>Greedy</a></li>
-                <li><a>Random</a></li>
-                <li><a>Number Theory</a></li>
-                <li><a>Strings</a></li>
-                <li><a href="index.html">About me</a></li>
-            </ul>
-        </div>
+        <script id="replace_with_navbar" src="nav.js"></script>
         <div id="basics" class="card">
             <div class="rightcolumn">
                 <h2 class="titles">Quick Links</h2>
@@ -69,17 +57,20 @@
                 <ul>
                     <li>
                         <p>
-                            Graph is a generic structure designed to support relationships. and is defined as a set of vertices $1, 2, .. n$ often labeled and edges usually written as $(vertex_1, vertex_2)$
+                            Graph is a generic structure designed to support relationships. and is defined as a set of
+                            vertices $1, 2, .. n$ often labeled and edges usually written as $(vertex_1, vertex_2)$
                         </p>
                     </li>
                     <li>
                         <p>
-                            $E$ is set of edges and $V$ is set of nodes. 2 vertices are adjacent if there is an edge a between those 2 vertices.
+                            $E$ is set of edges and $V$ is set of nodes. 2 vertices are adjacent if there is an edge a
+                            between those 2 vertices.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Normally we denote $|V| = n$ and $|E| = m$ where $|V|$ is cardinality (number of elements) of a set.
+                            Normally we denote $|V| = n$ and $|E| = m$ where $|V|$ is cardinality (number of elements)
+                            of a set.
                         </p>
                     </li>
                 </ul>
@@ -97,7 +88,8 @@
                     </li>
                     <li>
                         <p>
-                            Edge List, Adjacency List, Adjacency Matrix is the 3 common ways to represent ways to represent the graph.
+                            Edge List, Adjacency List, Adjacency Matrix is the 3 common ways to represent ways to
+                            represent the graph.
                         </p>
                     </li>
                     <li>
@@ -107,17 +99,21 @@
                     </li>
                     <li>
                         <p>
-                            The second way to represent the graph is the adjacent matrix. Its the simplest way to represent the matrix. Its an $n \times n$ matrix where $e_{ij} = 1$ iff there exist an edge between $i$ and $j$.
+                            The second way to represent the graph is the adjacent matrix. Its the simplest way to
+                            represent the matrix. Its an $n \times n$ matrix where $e_{ij} = 1$ iff there exist an edge
+                            between $i$ and $j$.
                         </p>
                     </li>
                     <li>
                         <p>
-                            There is an important observation in this matrix that diagonal elements are 0 which means there is no edge from a node to itself i.e self loop.
+                            There is an important observation in this matrix that diagonal elements are 0 which means
+                            there is no edge from a node to itself i.e self loop.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Another common and important way to represent a graph is called an Adjacency List. For each vertix we write down list of vertices that are incident on that vertix.
+                            Another common and important way to represent a graph is called an Adjacency List. For each
+                            vertix we write down list of vertices that are incident on that vertix.
                         </p>
                     </li>
                 </ul>
@@ -136,7 +132,8 @@
                             Initializing the structures for un-weighted case.
                         </p>
                         <div class="code">
-                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <div
+                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;vector&gt; </span><span style="color: #888888">//We use stl:vector to make lists.</span>
 <span style="color: #557799">#include &lt;utility&gt;</span>
 <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std; 
@@ -155,7 +152,8 @@ vector<span style="color: #333333">&lt;</span> pair<span style="color: #333333">
                             Inserting edges to the structures for un-weighted and un-directed case.
                         </p>
                         <div class="code">
-                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <div
+                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> m; i<span style="color: #333333">++</span>){ 
                 <span style="color: #333399; font-weight: bold">int</span> u, v;
                 scanf(<span style="background-color: #fff0f0">&quot;%d %d&quot;</span>, <span style="color: #333333">&amp;</span>u, <span style="color: #333333">&amp;</span>v);
@@ -175,7 +173,8 @@ vector<span style="color: #333333">&lt;</span> pair<span style="color: #333333">
                             Initializing the structures for weighted case.
                         </p>
                         <div>
-                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <div
+                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;vector&gt;</span>
 <span style="color: #557799">#include &lt;utility&gt;</span>
 <span style="color: #557799">#define ll long long</span>
@@ -195,7 +194,8 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                             Inserting edges to the structures for weighted and un-directed case.
                         </p>
                         <div>
-                            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <div
+                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> m; i<span style="color: #333333">++</span>){ 
     <span style="color: #333399; font-weight: bold">int</span> u, v;ll w;
     scanf(<span style="background-color: #fff0f0">&quot;%d %d %lld&quot;</span>, <span style="color: #333333">&amp;</span>u, <span style="color: #333333">&amp;</span>v, <span style="color: #333333">&amp;</span>w);
@@ -221,7 +221,8 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 <ul>
                     <li>
                         <p>
-                            A cycle is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is adjacent and $v_1$ is adjacent to $v_k$.
+                            A cycle is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is
+                            adjacent and $v_1$ is adjacent to $v_k$.
                         </p>
                     </li>
                     <li>
@@ -243,7 +244,8 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 <ul>
                     <li>
                         <p>
-                            A path is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is adjacent.
+                            A path is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is
+                            adjacent.
                         </p>
                     </li>
                     <li>
@@ -253,7 +255,8 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                     </li>
                     <li>
                         <p>
-                            Given a graph $G$ and 2 vertices $s$ and $t$. Check if a path from $s$ to $t$ exists ? If it exists print the path.
+                            Given a graph $G$ and 2 vertices $s$ and $t$. Check if a path from $s$ to $t$ exists ? If it
+                            exists print the path.
                         </p>
                     </li>
                     <li>
@@ -277,12 +280,14 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                 <ul>
                     <li>
                         <p>
-                            Two nodes are connected if there exist a path between them. If I can go from one node to another using the edges of the graph.
+                            Two nodes are connected if there exist a path between them. If I can go from one node to
+                            another using the edges of the graph.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Connected components is a set of vertices where each of 2 vertices are connected and no other vertice outside the component is connected .
+                            Connected components is a set of vertices where each of 2 vertices are connected and no
+                            other vertice outside the component is connected .
                         </p>
                     </li>
                 </ul>
@@ -337,22 +342,28 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
                     </li>
                     <li>
                         <p>
-                            For ex: Imagine you are trapped in some labyrinth and you want to find out the exit door. You are in some room and don't know where the exit is.
+                            For ex: Imagine you are trapped in some labyrinth and you want to find out the exit door.
+                            You are in some room and don't know where the exit is.
                         </p>
                     </li>
                     <li>
                         <p>
-                            You try first door out of that room. You go to next room and try the first door out of that room. If once you come to a room you already been to you wont enter that room and go back. You try the second door out of the old room and traverse the labyrinth.
+                            You try first door out of that room. You go to next room and try the first door out of that
+                            room. If once you come to a room you already been to you wont enter that room and go back.
+                            You try the second door out of the old room and traverse the labyrinth.
                         </p>
                     </li>
                     <li>
                         <p>
-                            There are two types of basic traverses DFS and BFS. They both differ in the order of vertices visited but both of the searches traverses the graph.
+                            There are two types of basic traverses DFS and BFS. They both differ in the order of
+                            vertices visited but both of the searches traverses the graph.
                         </p>
                     </li>
                     <li>
                         <p>
-                            In DFS we go through the first door of the first room and then again go through the first door of he second room and similarly we go deeper and deeper till we finally encounter the place we already been. Lets try to formalize it.
+                            In DFS we go through the first door of the first room and then again go through the first
+                            door of he second room and similarly we go deeper and deeper till we finally encounter the
+                            place we already been. Lets try to formalize it.
                         </p>
                     </li>
                     <li>
@@ -365,7 +376,8 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
             <div class="leftcolumn">
                 <h2 class="titles">Pseudo Code:</h2>
                 <div class="code">
-                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <div
+                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                         <pre style="margin: 0; line-height: 125%">recursive pseudo code
 visit(_fro)<span style="color: #333333">:</span>
     mark _fro visited
@@ -394,7 +406,8 @@ visit(src)<span style="color: #333333">:</span>
                     C++ Implementation
                 </h2>
                 <div class="code">
-                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <div
+                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                         <pre style="margin: 0; line-height: 125%">recursive definition
 <span style="color: #333399; font-weight: bold">bool</span> vis[MAXN];
 <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> n; i<span style="color: #333333">++</span>) vis[i] <span style="color: #333333">=</span> <span style="color: #007020">false</span>;
@@ -436,22 +449,29 @@ iterative approach
                 <ul>
                     <li>
                         <p>
-                            It depends upon how we represent the graph. If we store thegraph as a adjacency matrix its $O(n^2)$. If its stored in adjacency list its $O(n+m)$. Why?
+                            It depends upon how we represent the graph. If we store thegraph as a adjacency matrix its
+                            $O(n^2)$. If its stored in adjacency list its $O(n+m)$. Why?
                         </p>
                     </li>
                     <li>
                         <p>
-                            We visit each vertix only once because the in recursive procedure dfs is only called for vertices which is not yet visited and when its called vis[] of the vertice is set true and for each vertice the visit mark is set true only once.
+                            We visit each vertix only once because the in recursive procedure dfs is only called for
+                            vertices which is not yet visited and when its called vis[] of the vertice is set true and
+                            for each vertice the visit mark is set true only once.
                         </p>
                     </li>
                     <li>
                         <p>
-                            If we store the graph in the adjacency matrix , we have to traverse through all the matrix and find the vertices that are adjacent tofro. For each vertice it takes $O(n)$ to find its adjacent vertices and in total $O(n^2)$ for all vertices.
+                            If we store the graph in the adjacency matrix , we have to traverse through all the matrix
+                            and find the vertices that are adjacent tofro. For each vertice it takes $O(n)$ to find its
+                            adjacent vertices and in total $O(n^2)$ for all vertices.
                         </p>
                     </li>
                     <li>
                         <p>
-                            If we store the graph in adjacency list its $O(n+m)$, and for eachvertice, we can find the adjacent vertice in $O(1)$. and for eachvertice we can touch each adjacent node from it exactly once.and for each vertice we can use each edge going from it exactly
+                            If we store the graph in adjacency list its $O(n+m)$, and for eachvertice, we can find the
+                            adjacent vertice in $O(1)$. and for eachvertice we can touch each adjacent node from it
+                            exactly once.and for each vertice we can use each edge going from it exactly
                             once. So if all vertices and edges are touched once so its $O(n+m)$.
                         </p>
                     </li>
@@ -490,7 +510,8 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            if[tin[u], tout[u]]is nested in[tin[v], tout[v]]means thatuis a de-scendant ofvandvis a ancestor ofuin the DFS / PATH tree.
+                            if[tin[u], tout[u]]is nested in[tin[v], tout[v]]means thatuis a de-scendant ofvandvis a
+                            ancestor ofuin the DFS / PATH tree.
                         </p>
                     </li>
                     <li>
@@ -507,7 +528,8 @@ iterative approach
                 <ul>
                     <li>
                         <p>
-                            These classifications are often used for problems like finding bridges and finding articulation points.
+                            These classifications are often used for problems like finding bridges and finding
+                            articulation points.
                         </p>
                     </li>
                     <li>
@@ -522,13 +544,17 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
+                            Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS
+                            tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe
+                            already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
                             a forward edge.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree. if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other words, if we already visited and exited v and entry[u] entry[v] then
+                            Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree.
+                            if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other
+                            words, if we already visited and exited v and entry[u] entry[v] then
                             (u,v) is a cross edge.
                         </p>
                     </li>
@@ -546,18 +572,23 @@ iterative approach
                 <ul>
                     <li>
                         <p>
-                            Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY vertex (careful with un-directed graph skip the edge from which you came to the current)
+                            Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY
+                            vertex (careful with un-directed graph skip the edge from which you came to the current)
                         </p>
                     </li>
                     <li>
                         <p>
-                            Why can’t we go from go from a current vertex to a black vertex? Because when we mark the vertex a as black we processed all its edges that out go this vertex and we should have processed all adjacent vertex B that’s the reason we can’t reach a black
-                            vertex from the current node and whenever we find a cycle its always an edge from current node to a gray node.
+                            Why can’t we go from go from a current vertex to a black vertex? Because when we mark the
+                            vertex a as black we processed all its edges that out go this vertex and we should have
+                            processed all adjacent vertex B that’s the reason we can’t reach a black
+                            vertex from the current node and whenever we find a cycle its always an edge from current
+                            node to a gray node.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Make sure you distinguish between a cycle and going back to the parent. A separate par in the dfs definition i.e visit(fro, par) because you need to remember where you came from.
+                            Make sure you distinguish between a cycle and going back to the parent. A separate par in
+                            the dfs definition i.e visit(fro, par) because you need to remember where you came from.
                         </p>
                     </li>
                 </ul>
@@ -599,12 +630,14 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in other languages then just don’t care.
+                            Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in
+                            other languages then just don’t care.
                         </p>
                     </li>
                 </ul>
                 <div class="code">
-                    <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <div
+                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                         <pre style="margin: 0; line-height: 125%">function pathTo(t):
     path :<span style="color: #333333">=</span> []
     <span style="color: #008800; font-weight: bold">while</span> parent[t] <span style="color: #333333">!=</span> t: <span style="color: #333333">//</span>t <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> root
@@ -632,7 +665,8 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            There can be directed relationships, like if person A can be a friend of person B but not true the other way around.
+                            There can be directed relationships, like if person A can be a friend of person B but not
+                            true the other way around.
                         </p>
                     </li>
                     <li>
@@ -642,17 +676,20 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            We can extract connected components from the directed graph. They are called Strongly connected components.
+                            We can extract connected components from the directed graph. They are called Strongly
+                            connected components.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Let's try finding a cycle in a directed case. From 1 to 2 and 2 to 3 marks 3 visited and 2 visited and goes 1 to 3 and finds 3 visited and says its a cycle. but there was'nt.
+                            Let's try finding a cycle in a directed case. From 1 to 2 and 2 to 3 marks 3 visited and 2
+                            visited and goes 1 to 3 and finds 3 visited and says its a cycle. but there was'nt.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Lets try explicitly state colors with 3 values. 0 means WHITE not yet visited, 1 means gray means visited but not processed, 2 means BLACK means visited an processed.
+                            Lets try explicitly state colors with 3 values. 0 means WHITE not yet visited, 1 means gray
+                            means visited but not processed, 2 means BLACK means visited an processed.
                         </p>
                     </li>
                     <li>
@@ -696,20 +733,24 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            Next step is that we consider all adjacent vertices of $s$. and decide that the distance to them is 1. This is so called the first layer.
+                            Next step is that we consider all adjacent vertices of $s$. and decide that the distance to
+                            them is 1. This is so called the first layer.
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Now I want to enumerate all those vertices with distance 1 and assign them distance one more than my current distance. There might be some problem that some vertices at level 2 might be adjacent to several vertices from the level 1. TO keep things simple
+                            Now I want to enumerate all those vertices with distance 1 and assign them distance one more
+                            than my current distance. There might be some problem that some vertices at level 2 might be
+                            adjacent to several vertices from the level 1. TO keep things simple
                             I will just need to assign those vertices which are yet unassigned.
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Eventually this way we will cover all the vertices of the connected component that has the vertex $s$.
+                            Eventually this way we will cover all the vertices of the connected component that has the
+                            vertex $s$.
                         </p>
                     </li>
                     <li>
@@ -719,13 +760,17 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            When we have several layers to the bottom and we meet some vertex with length 3 and is connected to some vertex length 1. we would like to assign length 4 to it but this situation will never happen. Why ?
+                            When we have several layers to the bottom and we meet some vertex with length 3 and is
+                            connected to some vertex length 1. we would like to assign length 4 to it but this situation
+                            will never happen. Why ?
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Since we are enumerating vertices in increasing order of the layers, so the vertex with length 3 would actually have assigned a length of 2 since it was connected with a vertex of length 1.
+                            Since we are enumerating vertices in increasing order of the layers, so the vertex with
+                            length 3 would actually have assigned a length of 2 since it was connected with a vertex of
+                            length 1.
                         </p>
                     </li>
                 </ul>
@@ -745,27 +790,35 @@ iterative approach
                 <ul>
                     <li>
                         <p>
-                            Lets understand how to find those levels efficiently. We will use a data structure called a queue. Queue uses FIFO strategy, which is first in and first out. It behaves like a normal queue in front of a ticket booth.
+                            Lets understand how to find those levels efficiently. We will use a data structure called a
+                            queue. Queue uses FIFO strategy, which is first in and first out. It behaves like a normal
+                            queue in front of a ticket booth.
                         </p>
                     </li>
                     <li>
                         <p>
-                            I have to maintain the queue with initial entry $s$ and I have to maintain a distances[] array to store the distance from $s$. Assume all vertices except $s$ has a very big distance $10^9 + 7$ and s having distance 0.
+                            I have to maintain the queue with initial entry $s$ and I have to maintain a distances[]
+                            array to store the distance from $s$. Assume all vertices except $s$ has a very big distance
+                            $10^9 + 7$ and s having distance 0.
                         </p>
                     </li>
                     <li>
                         <p>
-                            First thing to do is, to extract a vertex from the queue and we process it. what do we do in processing? To process the vertex I look through all the outgoing edges of this vertex and I try to relax the big distance( $10^9 + 7$) from s to its neighbours
+                            First thing to do is, to extract a vertex from the queue and we process it. what do we do in
+                            processing? To process the vertex I look through all the outgoing edges of this vertex and I
+                            try to relax the big distance( $10^9 + 7$) from s to its neighbours
                             to something smaller.
                     </li>
                     <li>
                         <p>
-                            In our case from $s$ we can go to $a$ , $b$ , $c$ in 1 step, so I update their distance to 1 and push all the updated vertices to the queue. Now the vertex $s$ is processed.
+                            In our case from $s$ we can go to $a$ , $b$ , $c$ in 1 step, so I update their distance to 1
+                            and push all the updated vertices to the queue. Now the vertex $s$ is processed.
                         </p>
                     </li>
                     <li>
                         <p>
-                            The next step is to extract the next vertex from the queue and repeat the same procedure and try to relax (make smaller ) those distances which are larger than current + 1.
+                            The next step is to extract the next vertex from the queue and repeat the same procedure and
+                            try to relax (make smaller ) those distances which are larger than current + 1.
                         </p>
                     </li>
                     <li>
@@ -813,12 +866,15 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            There cannot be a situation where we relax a vertex and put it in the queue and relax it twice and put it in the queue again.
+                            There cannot be a situation where we relax a vertex and put it in the queue and relax it
+                            twice and put it in the queue again.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Lets say a vertex $x$ whose has an edge to a vertex $v$ which has some distance $5$ and $x$ has distance $6$ and there also exist a vertex $u$ which already has a distance say $3$ and also want to relax (make better) distance for $x$ and relax it to 4.
+                            Lets say a vertex $x$ whose has an edge to a vertex $v$ which has some distance $5$ and $x$
+                            has distance $6$ and there also exist a vertex $u$ which already has a distance say $3$ and
+                            also want to relax (make better) distance for $x$ and relax it to 4.
                         </p>
                     </li>
                     <li>
@@ -828,7 +884,8 @@ iterative approach
                     </li>
                     <li>
                         <p>
-                            Because $u$ will be processed first than $v$ as we are processing in increasing order of levels/ layers/ distances. That proves the correctness
+                            Because $u$ will be processed first than $v$ as we are processing in increasing order of
+                            levels/ layers/ distances. That proves the correctness
                         </p>
                     </li>
                 </ul>
@@ -843,7 +900,8 @@ iterative approach
                     <ul>
                         <li>
                             <p>
-                                Running time in $O(n + m)$ if we use adjacency list and its $O(n^2 + m)$ if we use adjacency matrices since we push all vertices will be in the queue exactly once .
+                                Running time in $O(n + m)$ if we use adjacency list and its $O(n^2 + m)$ if we use
+                                adjacency matrices since we push all vertices will be in the queue exactly once .
                             </p>
                         </li>
                     </ul>
