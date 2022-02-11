@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>geometry</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  <style type="text/css">
+  .boxfont {
+	font-family: "MS Serif", "New York", serif;
+	font-size: 18px;
+}
+  </style>
+  <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"]
+                ]
+            },
+            svg: {
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch ">
+				 <nav id="sidebar">
+      <div class="p-4 pt-1 sticky-top" style="overflow-y: auto; height: 600px;">
+        <a href="#" class="img logo rounded-circle mb-1" style="background-image: url(images/logo.jpg);"></a>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="graph.html"><i class="fa fa-link mr-2"></i>Graph</a>
+          </li>
+          
+          </li>
+          <li class="active"><a href="geometry.html"><i class="fa fa-link mr-2"></i> Geometry</a> </li>
+          <li>
+            <a href="dp.html"><i class="fa fa-link mr-2"></i> DP</a> </li>
+             <li>
+            <a href="math.html"><i class="fa fa-link mr-2"></i> Math</a> </li>
+          <li>
+            <a href="greedy.html"><i class="fa fa-link mr-2"></i> Greedy</a> </li>
+          <li>
+            <a href="probability.html"><i class="fa fa-link mr-2"></i> Probability</a> </li>
+          <li>
+            <a href="searching.html"><i class="fa fa-link mr-2"></i> Searching</a> </li>
+          <li>
+            <a href="numberTheory.html"><i class="fa fa-link mr-2"></i> Number Theory</a> </li>
+          <li>
+            <a href="sorting.html"><i class="fa fa-link mr-2"></i> Sorting & Sets</a> </li>
+          <li>
+            <a href="index.html"><i class="fa fa-link mr-2"></i> About me</a>  </li>
+          <li>
+	        </ul>
+          
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+       
+                  
+            <div class="leftcolumn">
+                <h2 class="titles">
+                    1-D Geometry Examples
+                </h2>
+                
+                        <p class="boxfont">
+                            Given $n$ segments on a line , the $ith$ segment is given as a pair of numbers $l_i, r_i$. Check if there is a point belonging to each of them? Is there intersection is non empty?
+                        </p>
+                    
+            </div>
+        
+             
+                <h2 class="titles">
+                    Check if 2 segments intersect or not
+                </h2>
+                    <p class="bordertxt">
+                            If $l_1, r_1$ and $l_2, r_2$ are given segments in 1-D. Find the segment formed by their intersection.
+                        </p>
+
+                
+                
+                    <p class="bordertxt">
+                         $$ L = min(l_1, l_2), R = max(r_2, r_1) $$
+                        
+                    </p>
+                    
+                    <p class="bordertxt">
+                            $$ \text{ if $L >= R$ then the segments are intersecting} $$
+                        </p>
+                        
+                        <p class="bordertxt">
+                             It can be generalised for n segments.
+                        </p>
+                        
+                        <h2 >
+                    General Rules
+                </h2>
+                    <p class="bordertxt">
+                             Floating point nature of geometrical problems means that the input data is mostly floating point calculations. Use integer data types when input data is integers. Integers overflow is to be considered since in geometry problems, numbers grow very quickly.
+                        </p>
+                        
+                        <p class="bordertxt">
+                             In C++ long long double is double contain 8-bytes, long double 12-bytes, Using a bigger data type reduces the probability that you have overflow problem. But long double takes more time to do basic operations.
+                        </p>
+                        
+                          <p class="bordertxt">
+                            All calculations in floating points are not exact, for ex: - $$ 0.1 + 0.1 != 0.2 $$ because it might be $0.1999999$ thats why we use a special value epsilon (dbl EPS = 1E-6) to compare two values.
+                        </p>
+                        <div class="code">
+                        <script src="https://gist.github.com/ravgupta11/d3b7b1758a06548837d8f2f16cd83b67.js"></script>
+                    </div>
+                        
+                        <p class="bordertxt">
+                             In binary search and in sorting in has exception but that also sometimes.
+                        </p>
+                        
+                         <p class="bordertxt">
+                             Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a run-time error. So we adopt following rule,
+                        </p>
+                        
+                        <p class="bordertxt">
+                             Since inaccuracy of $asin(val)$ function, if val is $1.0000001$ then $asin(val)$ will show a run-time error. So we adopt following rule,
+                        </p>
+                        <div><script src="https://gist.github.com/ravgupta11/25e880cefedf3bc6f83f6139a6910f6a.js"></script> </div>
+                        
+                        <p class="bordertxt">
+                            In-accuracy of double also applies in square root function $sqrt(val)$ .
+                        </p>
+                        
+                        
+                        <div>
+            <div class="leftcolumn">
+                <h2 >
+                    2-D Geometry introduction
+                </h2>
+                
+                        <p class="bordertxt">
+                            A vector and a point in 2D consist of 2 numbers $ &lti, j&gt, (x,y) $, and we can use $ std:pair $ or struct to implement their representation.
+
+                        </p>
+                   
+            </div>
+        </div>
+                    
+                    
+                     <div>
+            <div class="leftcolumn">
+                <h2 >
+                    Basic Operations
+                </h2>
+                
+                        <p class="bordertxt">
+                            1. Find squared length of a vector.<br> dbl len2(pt p){ return p.x*p.x + p.y*p.y; }
+
+                        </p>
+                           <p class="bordertxt">
+                            2. Find length of a vector.
+                            <br> dbl len(pt p){ return sqrt(len2(p)); }
+
+                        </p>
+                         <p class="bordertxt">
+                             3. Normalize the vector.
+                            <br> pt norm(pt p){ dbl lenp = len(p); return {p.x/lenp,p.y/lenp}; }
+
+                        </p>
+                        <p class="bordertxt">
+                            4 Rotate a vector.
+                            <br> pt rotate(pt p,dbl a){ return {cos(a)*p.x-sin(a)*p.y, cos(a)*p.y+sin(a)*p.x};} }
+                        </p>
+                   
+            </div>
+        </div>    
+        
+        <div>
+            <div class="leftcolumn">
+                <h2 >
+                    Properties of Dot(scalar) Product
+                </h2>
+                
+                        <p class="bordertxt">
+                             $p.q = dot(p, q)= p.X*q.X + p.Y*q.Y=cos(pq)*|p|*|q|$
+
+                        </p>
+                           <p class="bordertxt">
+                             Return scalar, not vector
+
+                        </p>
+                         <p class="bordertxt">
+                             Equals 0 $iff$ vectors $p$ and $q$ are orthogonal.
+
+                        </p>
+                        <p class="bordertxt">
+                            Positive is angle is acute, negative angle is obtuse.
+                        </p>
+                          <p class="bordertxt">
+                            Signed length of projection of $p$ on $q$ is $|p|*cos(pq)$.
+                        </p>
+                        
+                       <p class="bordertxt">
+                            Symmetrical in nature: $dot(p,q) = dot(q,p)$.
+                        </p>
+                   
+            </div>
+        </div>  
+        
+        
+          <div>
+            <div class="leftcolumn">
+                <h2 >
+                    Applications of Dot Product
+                </h2>
+                
+                        <p class="bordertxt">
+                             You are given a segment $A(x_1, y_1)$ and $B(x_1, y_1)$ and a point $P(x_3, y_3)$. check if a point is orthogonal to segment $AB$.
+
+                        </p>
+                           <p class="bordertxt">
+                             <em> Solution: </em> - Calculate the vectors $AB$ and $AP$. Calculate the dot product of $AB$ and $AP$ and it will be positive $iff$ if the angle is acute. Check for similar case for B. It is important to check the same for B.
+
+                        </p>
+                         <p class="bordertxt">
+                              You are given a circle with center $O(p, q)$ and a point on the circle $A(x_1, y_1)$ and a point $P(x, y)$. You have to check whether you can see $P$ from $A$. Calculate $OA$ and $AP$ if the dot product is non-positive which means the angle is obtuse or right angle hence you can see A from B.
+
+                        </p>
+                        <p class="bordertxt">
+                            Re-calculation of point P on co-ordinate system of $A$ and $B$ vectors. Solution:- $$P = \alpha. A + \beta . B$$ and $\alpha = \frac{dot(P,A)}{|A|^2}$ and similar for $\beta$.
+                        </p>
+                          <p class="bordertxt">
+                             Calculate signed angle between vectors $p$ and $q$, $$cos(pq) = |p||q|/dot(p,q)$$
+                        </p>
+                        
+                       <p class="bordertxt">
+                            Calculate orthogonal vector from a vector $A$ in 2-D plane. $$ A = &lt b, a> $$ $$B = &lt -a, b>$$ $$C = &lt a, -b>$$.
+                        </p>
+                   
+            </div>
+        </div>
+        
+        <div>
+            <div class="leftcolumn">
+            <p class="bordertxt">
+                              $ p\times q = cross(p, q)= p.X*q.Y - p.Y*q.X = sin(pq)*|p|*|q| $ 
+
+                        </p>
+                <h2 >
+                   Properties of Cross Product
+                </h2>
+                
+                        
+                           <p class="bordertxt">
+                             Returns scalar not a vector
+                        </p>
+                         <p class="bordertxt">
+                             Equals 0 $iff$ vectors are co-linear.
+
+                        </p>
+                        <p class="bordertxt">
+                            Absolute value of cross products is area of a parallelogram.
+                        </p>
+                          <p class="bordertxt">
+                             Positive $iff$ one should rotate $p$ counterclockwise (in shortest way)to make sure its in the same direction of $q$. same goes for clockwise. in one case vector p is on right side of vector q and in another case vector p is on left side.
+                        </p>
+                   
+                       
+            </div>
+        </div>
+        
+        <div>
+            <div class="leftcolumn">
+            
+                <h2 >
+                   Applications of Cross Product
+                </h2>
+                
+            </div>
+        </div>
+        
+        
+        <div>
+            <div class="leftcolumn">
+            
+                <h2 >
+                   Lines
+                </h2>
+                 <p class="bordertxt">
+                             Lines are defined by: $$ Ax +By+C = 0 $$ where A!=0 or/and B !=0.
+                        </p>
+                        
+                        <p class="bordertxt">
+                              Vector $ &lt A, B >$ is a normal vector. Also $ &lt -A, -B >$ is other normal vector.
+                        </p>
+                        
+                        <p class="bordertxt">
+                              Vector $&ltB, -A >$ is a directing vector, also $&lt-B, A >$ is a directing vector.
+                        </p>
+                        <p class="bordertxt">
+                              Distance from point to a line is $$D = \frac{|Ax+By+C|}{\sqrt{A^2 + B^2}}.$$ .
+                        </p>
+                        
+                         <p class="bordertxt">
+                               Sign matters as they give the side of a point with respect to the line.
+                        </p>
+            </div>
+        </div>
+        
+                <div>
+            <div class="leftcolumn">
+            
+                <h2 >
+                   Line-Line intersection
+                </h2>
+                 <p class="bordertxt">
+                             The first step to find the intersection is to find the situation , normally we don't have a intersection if lines are parallel or concise. Calculate the cross product of normal vectors of each line. if the $ cross( &lt A_1, B_1 >, &lt A_2, B_2 >) $ is
+                            $0$ then it is parallel or concise.
+                        </p>
+                        
+                        <p class="bordertxt">
+                               Next step is to find the point using Cramer's rule. $$ x = -\frac{det(C_1, B_1, C_2, B_2)}{det(A_1, B_1, A_2, B_2)} $$ and $$ y = -\frac{det(A_1, C_1, A_2, C_2)}{det(A_1, B_1, A_2, B_2)} $$
+                        </p>
+                        
+                        <p class="bordertxt">
+                              Remember, that Ax+By+C=0 is not always a line (it could be empty set or whole plane.)
+                        </p>
+                        
+            </div>
+        </div>
+        
+        
+                      <div>
+            <div class="leftcolumn">
+            
+                <h2 >
+                   Segment - Segment Intersection: Yes/No Algorithm
+                </h2>
+                 <p class="bordertxt">
+                             Segment and Segment intersect their bounding boxes should also intersect converse is not true. But its also possible that segments does not intersect but their bounding boxes intersect.
+                        </p>
+                        
+                        <p class="bordertxt">
+                              To check if the segments do not intersect only one of the conditions need to be true.
+                            <!-- -----Review: Not showing properly------ -->
+                            $$ max(p1.X, q1.X) &lt min(p2.X, q2.X) $$ or $$ min(p1.X, q1.X) > max(p2.X, q2.X) $$
+                        </p>
+                        
+                        <p class="bordertxt">
+                              Check if the first segment is strictly left to the second one or to the strictly right.
+                            <!-- -----Review: Not showing properly------ -->
+                            $$ max(p1.Y, q1.Y) &lt min(p2.Y, q2.Y) $$ or $$ min(p1.Y, q1.Y) > max(p2.Y, q2.Y) $$
+                        </p>
+                          <p class="bordertxt">
+                              Even if the bounding boxes intersect its possible that the segment do not intersect. Check if $$cross(p_1q_1, p_1q_2) \times cross(p_1q_1, p_1p_2) > 0$$ or $$cross(p_2q_2, p_2q_1) \times cross(p_2q_2, p_2q_2) > 0$$ then segments do not intersect. Otherwise
+                            they do intersect.}
+                        </p>
+                        
+            </div>
+        </div>
+        
+              <div>
+            <div class="leftcolumn">
+            
+                <h2 >
+                   Find the point of intersection of segment - segment intersection.
+                </h2>
+                 <p class="bordertxt">
+                              Given that the segments intersect, Find their point of intersection.
+                        </p>
+                        
+                        <p class="bordertxt">
+                              Find the $ cross( &lt A_1, B_1 >, &lt A_2, B_2 >) $ of normal vectors, if its zero then the segments must coincide. Check if the endpoints of the first segment lie on the second segment or vice-versa.
+                        </p>
+                        
+                        <p class="bordertxt">
+                             if $cross( &lt A_1, B_1 >, &lt A_2, B_2 >)$ not zero then construct lines $$ L_1 = (A_1, B_1, C_1) $$ $$ L_2 = (A_2, B_2, C_2) $$ and find their intersection using Cramer's Rule.
+                        </p>
+                          
+                        
+            </div>
+        </div>
+        
+          
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Graph</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8" />
-    <title>The blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  <style type="text/css">
+  .boxfont {
+	font-family: "MS Serif", "New York", serif;
+	font-size: 18px;
+}
+  </style>
+  <script>
         MathJax = {
             tex: {
                 inlineMath: [
@@ -20,118 +29,173 @@
         };
     </script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch ">
+			<nav id="sidebar">
+				<div class="p-4 pt-1 sticky-top" style="overflow-y: auto; height: 600px;">
+		  		<a href="#" class="img logo rounded-circle mb-1" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle collapsed">
+                <i class="fa fa-link mr-2"></i> Graph</a>
+	            <ul class="collapse show list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#"><i class="fa fa-circle small mr-1"></i> Basics</a>
+                </li>
+                <li>
+                    <a href="#represent"><i class="fa fa-circle small mr-1"></i> Representations</a>
+                </li>
+                <li>
+                    <a href="#cycle"><i class="fa fa-circle small mr-1"></i> What is a cycle ? </a>
+                </li>
+                 <li>
+                    <a href="#path"><i class="fa fa-circle small mr-1"></i> What is a path ? </a>
+                </li>
+                 <li>
+                    <a href="#connectivity"><i class="fa fa-circle small mr-1"></i> Connectivity </a>
+                </li>
+                 <li>
+                    <a href="#dfs"><i class="fa fa-circle small mr-1"></i> Depth First Search </a>
+                </li>
+                 <li>
+                    <a href="#cycledet"><i class="fa fa-circle small mr-1"></i> Cycle Detection </a>
+                </li>
+                 <li>
+                    <a href="#pathtree"><i class="fa fa-circle small mr-1"></i> Path tree</a>
+                </li>
+                <li>
+                    <a href="#directed"><i class="fa fa-circle small mr-1"></i> Cycles in directed graphs</a>
+                </li>
+                <li>
+                    <a href="#shortest"><i class="fa fa-circle small mr-1"></i> Shortest path problem</a>
+                </li>
+                <li>
+                    <a href="#optimization"><i class="fa fa-circle small mr-1"></i> Optimization by BFS</a>
+                </li>
+                <li>
+                    <a href="#proof"><i class="fa fa-circle small mr-1"></i> Proof of correctness</a>
+                </li>
+                <li>
+                    <a href="#complexity1"><i class="fa fa-circle small mr-1"></i> complexity</a>
+                </li>
+                
+	            </ul>
+              
+	          </li>
+          <li><a href="geometry.html"><i class="fa fa-link mr-2"></i> Geometry</a> </li>
+          <li>
+            <a href="dp.html"><i class="fa fa-link mr-2"></i> DP</a> </li>
+             <li>
+            <a href="math.html"><i class="fa fa-link mr-2"></i> Math</a> </li>
+          <li>
+            <a href="greedy.html"><i class="fa fa-link mr-2"></i> Greedy</a> </li>
+          <li>
+            <a href="probability.html"><i class="fa fa-link mr-2"></i> Probability</a> </li>
+          <li>
+            <a href="searching.html"><i class="fa fa-link mr-2"></i> Searching</a> </li>
+          <li>
+            <a href="numberTheory.html"><i class="fa fa-link mr-2"></i> Number Theory</a> </li>
+          <li>
+            <a href="sorting.html"><i class="fa fa-link mr-2"></i> Sorting & Sets</a> </li>
+          <li>
+            <a href="index.html"><i class="fa fa-link mr-2"></i> About me</a>  </li>
+          <li>
+	        </ul>
+          
+	        
+	      </div>
+    	</nav>
 
-<body>
-    <header>
-        <div id="inner">
-            <div id="profile_pic"></div>
-            <h1 class="site-title">Raveesh Gupta</h1>
-            <p class="site-description">A blog on sport programming</p>
-        </div>
-    </header>
-    <div id="content-wrapper">
-        <script id="replace_with_navbar" src="nav.js"></script>
-        <div id="basics" class="card">
-            <div class="rightcolumn">
-                <h2 class="titles">Quick Links</h2>
-                <ul>
-                    <li><a href="#basics">Basics</a></li>
-                    <li><a href="#represent">Representations</a></li>
-                    <li><a href="#cycle">What is a cycle ?</a></li>
-                    <li><a href="#path">What is a path ? </a></li>
-                    <li><a href="#connectivity">Connectivity</a></li>
-                    <li><a href="#dfs">Depth First Search</a></li>
-                    <li><a href="#cycledet">Cycle Detection</a></li>
-                    <li><a href="#pathtree">Path tree</a></li>
-                    <li><a href="#directed">Cycles in directed graphs</a></li>
-                    <li><a href="#shortest">Shortest path problem</a></li>
-                    <li><a href="#optimization">Optimization by BFS</a></li>
-                    <li> <a href="#proof">Proof of correctness</a></li>
-                    <li> <a href="#complexity">complexity</a></li>
-                </ul>
-                <div class="IMG"><img src="Images/xkcd1.png" /></div>
-            </div>
-            <div class="leftcolumn">
-                <h2 class="titles">Basics</h2>
-                <ul>
-                    <li>
-                        <p>
-                            Graph is a generic structure designed to support relationships. and is defined as a set of
-                            vertices $1, 2, .. n$ often labeled and edges usually written as $(vertex_1, vertex_2)$
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            $E$ is set of edges and $V$ is set of nodes. 2 vertices are adjacent if there is an edge a
-                            between those 2 vertices.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Normally we denote $|V| = n$ and $|E| = m$ where $|V|$ is cardinality (number of elements)
-                            of a set.
-                        </p>
-                    </li>
-                </ul>
-            </div>
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
 
-        </div>
-        <div id="represent" class="card">
-            <div class="leftcolumn">
-                <h2 class="titles">Representation</h2>
-                <ul>
-                    <li>
-                        <p>
-                            In algorithmic problems we use 3 ways to represent the graph.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Edge List, Adjacency List, Adjacency Matrix is the 3 common ways to represent ways to
-                            represent the graph.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            List of all edges i.e $(1, 2), (3, 4), ...$ but its not very convenient to work with.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            The second way to represent the graph is the adjacent matrix. Its the simplest way to
-                            represent the matrix. Its an $n \times n$ matrix where $e_{ij} = 1$ iff there exist an edge
-                            between $i$ and $j$.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            There is an important observation in this matrix that diagonal elements are 0 which means
-                            there is no edge from a node to itself i.e self loop.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Another common and important way to represent a graph is called an Adjacency List. For each
-                            vertix we write down list of vertices that are incident on that vertix.
-                        </p>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li> -->
+              </ul>
             </div>
-            <div class="rightcolumn">
-                <div class="IMG"><img src="Images/graphex.png" /></div>
+          </div>
+        </nav>
+
+        <div class="leftcolumn">
+          <h2 class="titles">Basics</h2>
+            
+                    <p class="bordertxt">
+                        Graph is a generic structure designed to support relationships. and is defined as a set of
+                        vertices $1, 2, .. n$ often labeled and edges usually written as $(vertex_1, vertex_2)$
+                    </p>
+
+                 
+                
+                    <p class="bordertxt">
+                        $E$ is set of edges and $V$ is set of nodes. 2 vertices are adjacent if there is an edge a
+                        between those 2 vertices.
+                    </p>
+
+                
+                
+                    <p class="bordertxt">
+                        Normally we denote $|V| = n$ and $|E| = m$ where $|V|$ is cardinality (number of elements)
+                        of a set.
+                    </p>
+          <div class="picdiv">
+                <div class="IMG"><img src="Images/graphex.png" width="200" height="200" /></div><br>
+
                 <div class="IMG"><img src="Images/matrix.png" /></div>
             </div>
-        </div>
-        <div class="card">
-            <div class="leftcolumn" style="width: 100%;">
-                <h2 class="titles">C++: Implementation</h2>
-                <ul>
-                    <li>
-                        <p>
-                            Initializing the structures for un-weighted case.
-                        </p>
-                        <div class="code">
+          <h2 class="titles">Representation<a name="represent"></a></h2>
+                    <p class="bordertxt">
+                        $E$ is set of edges and $V$ is set of nodes. 2 vertices are adjacent if there is an edge a between those 2 vertices. of a set.
+                    </p>
+                    <p class="bordertxt">
+                        List of all edges i.e $(1, 2), (3, 4), ...$ but its not very convenient to work with. 
+                    </p>
+                    <p class="bordertxt">
+                        The second way to represent the graph is the adjacent matrix. Its the simplest way to represent the matrix. Its an $n \times n$ matrix where $e_{ij} = 1$ iff there exist an edge between $i$ and $j$. 
+                    </p>
+                    <p class="bordertxt">
+                        There is an important observation in this matrix that diagonal elements are 0 which means there is no edge from a node to itself i.e self loop. 
+                    </p>
+                        <p class="bordertxt">
+                        Another common and important way to represent a graph is called an Adjacency List. For each vertix we write down list of vertices that are incident on that vertix. 
+                    </p>
+                    
+                    
+                    
+                    
+                 <h2 class="titles">C++: Implementation</h2>
+            
+                    <p class="bordertxt">
+                        Initializing the structures for un-weighted case.
+                    </p>
+
+                 
+                
+<div class="code boxfont">
                             <div
                                 style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;vector&gt; </span><span style="color: #888888">//We use stl:vector to make lists.</span>
@@ -145,34 +209,13 @@ vector<span style="color: #333333">&lt;</span> pair<span style="color: #333333">
 <span style="color: #333399; font-weight: bold">bool</span> adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN initialized to 0</span>
 </pre>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <p>
-                            Inserting edges to the structures for un-weighted and un-directed case.
-                        </p>
-                        <div class="code">
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> m; i<span style="color: #333333">++</span>){ 
-                <span style="color: #333399; font-weight: bold">int</span> u, v;
-                scanf(<span style="background-color: #fff0f0">&quot;%d %d&quot;</span>, <span style="color: #333333">&amp;</span>u, <span style="color: #333333">&amp;</span>v);
-                u<span style="color: #333333">--</span>; v<span style="color: #333333">--</span>; <span style="color: #888888">// if starting label of the input is 1 decrease it to make it 0.</span>
-                G[u].push_back(v);
-                G[v].push_back(u);
-                adj[u][v] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
-                adj[v][u] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
-                E.push_back({u, v});
-            }
-</pre>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <p>
+                        </div><br>
+
+                        <p class="bordertxt">
                             Initializing the structures for weighted case.
                         </p>
-                        <div>
+                        
+                        <div class="bordertxt">
                             <div
                                 style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;vector&gt;</span>
@@ -187,13 +230,11 @@ vector<span style="color: #333333">&lt;</span> pair <span style="color: #333333"
 ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN initialized to 0</span>
 </pre>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <p>
+                        </div><br>
+<p class="bordertxt">
                             Inserting edges to the structures for weighted and un-directed case.
                         </p>
-                        <div>
+                        <div class="bordertxt">
                             <div
                                 style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                                 <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> m; i<span style="color: #333333">++</span>){ 
@@ -208,175 +249,131 @@ ll adj[MAXN][MAXN]; <span style="color: #888888">// a matrix of MAXN x MAXN init
 }
 </pre>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div id="cycle" class="card">
-            <div class="leftcolumn">
-                <h2 class="titles">
+                        </div><br>
+
+                        
+                        <h2 >
                     What is a Cycle ?
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="cycle"></a></h2>
+                <div class="picdiv">
+                    <img src="Images/cycle.png" width="200" height="200" />
+                </div>
+                 <p class="bordertxt">
                             A cycle is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is
                             adjacent and $v_1$ is adjacent to $v_k$.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+<p class="bordertxt">
                             A cycle is simple if all vertices on it are distinct.
                         </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="rightcolumn">
-                <div class="IMG">
-                    <img src="Images/cycle.png" />
+                        
+          <div class="leftcolumn">
+                <h2 class="titles">What is a Path ? Path Search Problem<a name="path"></a></h2>
+            <div class="picdiv">
+                    <img src="Images/path.png" width="200" />
                 </div>
-            </div>
-        </div>
-        <div id="path" class="card">
-            <div class="leftcolumn">
-                <h2 class="titles">What is a Path ? Path Search Problem</h2>
-                <ul>
-                    <li>
-                        <p>
+            <p class="bordertxt">
                             A path is a sequence of vertices $v_1, v_2, v_3, ... v_k$ where each $(v_i, v_{i+1})$ is
                             adjacent.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             A path is simple if all vertices are distinct.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Given a graph $G$ and 2 vertices $s$ and $t$. Check if a path from $s$ to $t$ exists ? If it
                             exists print the path.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                  
+                        <p class="bordertxt">
                             Think about it as exploring a labyrinth (maze).
                         </p>
-                    </li>
-                </ul>
+                    
             </div>
-            <div class="rightcolumn">
-                <div class="IMG">
-                    <img src="Images/path.png" />
-                </div>
-            </div>
-        </div>
-        <div id="connectivity" class="card">
-            <div class="leftcolumn">
-                <h2 class="titles">
+                        
+       <div class="leftcolumn">
+                <h2 >
                     What is connectivity ?
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="connectivity"></a></h2>
+                <div class="rightcolumn">
+                <div class="picdiv">
+                    <img src="Images/connected.png" width="200" height="200" />
+                </div>
+         </div>
+                
+                        <p class="bordertxt" >
                             Two nodes are connected if there exist a path between them. If I can go from one node to
                             another using the edges of the graph.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Connected components is a set of vertices where each of 2 vertices are connected and no
                             other vertice outside the component is connected .
-                        </p>
-                    </li>
-                </ul>
+                        
+                       </p>
+                  <div class="picdiv"><img src="Images/dfs4img.png" width="269" height="1059" /></div>
 
-            </div>
-
-            <div class="rightcolumn">
-                <div class="IMG">
-                    <img src="Images/connected.png" />
-                </div>
-            </div>
-        </div>
-        <div id="dfs" class="card">
-            <div class="rightcolumn">
-                <div class="IMG">
-                    <img src="Images/dfs1.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs2.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs3.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs4.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs5.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs6.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs7.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs8.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/dfs9.png" />
-                </div>
-            </div>
-            <div class="leftcolumn">
-                <h2 class="titles">
+            </div>                 
+                    
+          <div class="leftcolumn">
+                <h2 >
                     Algorithms: DFS (Depth First Search)
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="dfs"></a></h2>
+                  <div class="rightcolumn">
+                <div class="picdiv"></div><br>
+
+            </div>  
+               
+            <p class="bordertxt">
                             Now lets try to find all the vertices that are connected to some vertice 1.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             For ex: Imagine you are trapped in some labyrinth and you want to find out the exit door.
                             You are in some room and don't know where the exit is.
                         </p>
-                    </li>
-                    <li>
-                        <p>
-                            You try first door out of that room. You go to next room and try the first door out of that
+                   
+                     <p class="bordertxt">
+                         You try first door out of that room. You go to next room and try the first door out of that
                             room. If once you come to a room you already been to you wont enter that room and go back.
-                            You try the second door out of the old room and traverse the labyrinth.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            There are two types of basic traverses DFS and BFS. They both differ in the order of
-                            vertices visited but both of the searches traverses the graph.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
+                     You try the second door out of the old room and traverse the labyrinth. </p>
+                 
+                     <p class="bordertxt">
+                         There are two types of basic traverses DFS and BFS. They both differ in the order of
+                         vertices visited but both of the searches traverses the graph.
+                     </p>
+                  
+                        <p class="bordertxt">
                             In DFS we go through the first door of the first room and then again go through the first
                             door of he second room and similarly we go deeper and deeper till we finally encounter the
                             place we already been. Lets try to formalize it.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Black colored directed edges forms a path tree / DFS tree
                         </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="leftcolumn">
-                <h2 class="titles">Pseudo Code:</h2>
-                <div class="code">
-                    <div
+                   
+            </div> <br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+          
+                        
+       <div class="leftcolumn">
+                <h2 >Pseudo Code:</h2>
+                <div class="picdiv"><img src="Images/psu3img.png" width="325" height="1358" /></div>
+                
+         <div class="code class="bordertxt"" >
+                    <div 
                         style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                         <pre style="margin: 0; line-height: 125%">recursive pseudo code
 visit(_fro)<span style="color: #333333">:</span>
@@ -399,10 +396,28 @@ visit(src)<span style="color: #333333">:</span>
 </pre>
                     </div>
                 </div>
-            </div>
+            </div><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-            <div class="leftcolumn">
-                <h2 class="titles">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+                
+                     
+          <div class="leftcolumn">
+                <h2 >
                     C++ Implementation
                 </h2>
                 <div class="code">
@@ -441,55 +456,57 @@ iterative approach
 </pre>
                     </div>
                 </div>
-            </div>
-            <div class="leftcolumn">
-                <h2 class="titles">
+            </div>  <br>
+ 
+            <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="leftcolumn">
+                <h2 >
                     What is the complexity of this algorithm ?
                 </h2>
-                <ul>
-                    <li>
-                        <p>
+                <div class="picdiv"><img src="images/coa3img.png" width="297" height="2646" /></div>
+               
+                        <p class="bordertxt">
                             It depends upon how we represent the graph. If we store thegraph as a adjacency matrix its
                             $O(n^2)$. If its stored in adjacency list its $O(n+m)$. Why?
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             We visit each vertix only once because the in recursive procedure dfs is only called for
                             vertices which is not yet visited and when its called vis[] of the vertice is set true and
                             for each vertice the visit mark is set true only once.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             If we store the graph in the adjacency matrix , we have to traverse through all the matrix
                             and find the vertices that are adjacent tofro. For each vertice it takes $O(n)$ to find its
                             adjacent vertices and in total $O(n^2)$ for all vertices.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                  
+                        <p class="bordertxt">
                             If we store the graph in adjacency list its $O(n+m)$, and for eachvertice, we can find the
                             adjacent vertice in $O(1)$. and for eachvertice we can touch each adjacent node from it
                             exactly once.and for each vertice we can use each edge going from it exactly
                             once. So if all vertices and edges are touched once so its $O(n+m)$.
                         </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="rightcolumn">
-                <div class="IMG"><img src="Images/time1.png" /> </div>
-                <div class="IMG"><img src="Images/time2.png" /></div>
-                <div class="IMG"><img src="Images/time3.png" /></div>
-                <div class="IMG"><img src="Images/time5.png" /></div>
-                <div class="IMG"><img src="Images/time4.png" /></div>
-                <div class="IMG"><img src="Images/time6.png" /></div>
-                <div class="IMG"><img src="Images/time7.png" /></div>
-                <div class="IMG"><img src="Images/time8.png" /></div>
-                <div class="IMG"><img src="Images/times9.png" /></div>
-            </div>
-            <div class="leftcolumn">
-                <h2 class="titles">
+                    </div><br>
+<br>
+<br>
+<br>
+<br><br>
+
+
+
+           
+          <div class="leftcolumn">
+                <h2 >
                     Pseudo Code: DFS with colors and time
                 </h2>
 
@@ -498,144 +515,125 @@ iterative approach
                 </div>
             </div>
             <div class="leftcolumn">
-                <h2 class="titles">
+                <h2 >
                     Properties of Times
                 </h2>
 
-                <ul>
-                    <li>
-                        <p>
+               
+                        <p class="bordertxt">
                             For any u and v time segments [tin[u], tout[u]] and [tin[v], tout[v]].
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             if[tin[u], tout[u]]is nested in[tin[v], tout[v]]means thatuis a de-scendant ofvandvis a
                             ancestor ofuin the DFS / PATH tree.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             if[tin[u], tout[u]]and[tin[v], tout[v]]do not intersect - meaning uand v are not comparable.
                         </p>
-                    </li>
-                </ul>
+                    
             </div>
+            
             <div class="leftcolumn">
-                <h2 class="titles">
+                <h2 >
                     Type Of Edges:
                 </h2>
-                <ul>
-                    <li>
-                        <p>
+                
+                        <p class="bordertxt">
                             These classifications are often used for problems like finding bridges and finding
                             articulation points.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Tree Edges : Edges going from GRAY to WHITE vertex in the DFS tree.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Backward Edges : Edges going from GRAY to GRAY vertex in the DFS tree.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Forward Edges (ONLY IN DIRECTED GRAPH) : Edges goingfrom GRAY to BLACK vertex in the DFS
                             tree. If v is a descen-dant of u, then edge (u,v) is a forward edge. In other words, ifwe
                             already visited and exited v and entry[u] entry[v] then theedge (u,v) forms
                             a forward edge.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Cross Edges (ONLY IN DIRECTED GRAPH): Edges goingfrom GRAY to BLACK vertex in the DFS tree.
                             if v is nei-ther an ancestor or descendant of u, then edge (u,v) is a crossedge. In other
                             words, if we already visited and exited v and entry[u] entry[v] then
                             (u,v) is a cross edge.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Look on the times tin / tout to choose forward or cross.
                         </p>
-                    </li>
-                </ul>
+                   
             </div>
-            <div id="cycledet" class="leftcolumn">
-                <h2 class="titles">
+            
+           <br>
+<br>
+<br>
+
+          <div id="cycledet" class="leftcolumn">
+                <h2 >
                     Cycle Detection: Application of DFS
                 </h2>
-                <ul>
-                    <li>
-                        <p>
+               <div class="picdiv"><img src="images/cd1.png" width="217" height="190" /></div>
+               
+                        <p class="bordertxt">
                             Cycle exists if and only if a backward edge exists, i.e look up from the vertex to a GRAY
                             vertex (careful with un-directed graph skip the edge from which you came to the current)
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Why can’t we go from go from a current vertex to a black vertex? Because when we mark the
                             vertex a as black we processed all its edges that out go this vertex and we should have
                             processed all adjacent vertex B that’s the reason we can’t reach a black
                             vertex from the current node and whenever we find a cycle its always an edge from current
                             node to a gray node.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Make sure you distinguish between a cycle and going back to the parent. A separate par in
                             the dfs definition i.e visit(fro, par) because you need to remember where you came from.
                         </p>
-                    </li>
-                </ul>
+                   
             </div>
-            <div class="rightcolumn">
-                <div>
-                    <img src="Images/cycle2.png" />
-                </div>
-            </div>
+            
             <div id="pathtree" class="leftcolumn">
-                <h2 class="titles">
+                <h2 >
                     Path Tree
                 </h2>
-                <ul>
-                    <li>
-                        <p>
+               
+                        <p class="bordertxt">
                             Path Tree is an outgoing tree routed at s. Path tree covers all vertices reachable from s.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             parent[u] = u for root vertex u = src
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             parent[u] = −1 for unreachable vertices u
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             parent[u] = v if v is the previous vertex for u on the path from from s to u.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                  
+                        <p class="bordertxt">
                             pseudo code to restore path
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Beware of the identifier prev as there exist a std:prev predefined in C++. If you code in
                             other languages then just don’t care.
                         </p>
-                    </li>
-                </ul>
-                <div class="code">
+                    
+                <div class="code class="bordertxt"">
                     <div
                         style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
                         <pre style="margin: 0; line-height: 125%">function pathTo(t):
@@ -649,268 +647,210 @@ iterative approach
 </pre>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="directed" class="card">
-            <!-- Repeated element on each chapter-->
+            </div><br>
+
+            
             <div class="leftcolumn">
                 <h2 class="titles">
                     Directed case
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="directed"></a></h2>
+               
+         <div class="picdiv"><img src="images/dc1.png" width="301" height="624" /></div>               
+         <p class="bordertxt">
                             Adjacency matrix is not symmetric in this case.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             There can be directed relationships, like if person A can be a friend of person B but not
                             true the other way around.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             There can be similar problems like if $u$ is reachable from vertex $v$.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             We can extract connected components from the directed graph. They are called Strongly
                             connected components.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Let's try finding a cycle in a directed case. From 1 to 2 and 2 to 3 marks 3 visited and 2
                             visited and goes 1 to 3 and finds 3 visited and says its a cycle. but there was'nt.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Lets try explicitly state colors with 3 values. 0 means WHITE not yet visited, 1 means gray
                             means visited but not processed, 2 means BLACK means visited an processed.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             A cycle only exists only if we go from current node to a gray node.
                         </p>
-                    </li>
-                </ul>
+                    
             </div>
-            <div class="rightcolumn">
-                <div class="IMG"><img src="Images/cycle3.png" /></div>
-                <div class="IMG"><img src="Images/xkcd2.png" /></div>
-            </div>
-        </div>
-        <div id="shortest" class="card">
-            <!-- Repeated element on each chapter-->
+            
             <div class="leftcolumn">
-                <h2 class="titles">
+                <h2 >
                     Shortest Path Problem: Directed or un-directed graph
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="shortest"></a></h2>
+            <div class="picdiv"><img src="images/sp1.png" width="283" height="690" /></div>     
+              <p class="bordertxt">
                             Given a graph G find the shortest path between a pair of vertices $s$ and $t$.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             All the edges in my graph is same length.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Lets discuss a simpler but an inefficient algorithm to solve this problem called Flood Fill
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             We say the best distance from s to s is 0.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Next step is that we consider all adjacent vertices of $s$. and decide that the distance to
                             them is 1. This is so called the first layer.
                         </p>
-                    </li>
-
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Now I want to enumerate all those vertices with distance 1 and assign them distance one more
                             than my current distance. There might be some problem that some vertices at level 2 might be
                             adjacent to several vertices from the level 1. TO keep things simple
                             I will just need to assign those vertices which are yet unassigned.
                         </p>
-                    </li>
-
-                    <li>
-                        <p>
+                  
+                        <p class="bordertxt">
                             Eventually this way we will cover all the vertices of the connected component that has the
                             vertex $s$.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                  
+                        <p class="bordertxt">
                             There are efficient algorithms that does exactly the same thing but a bit faster.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             When we have several layers to the bottom and we meet some vertex with length 3 and is
                             connected to some vertex length 1. we would like to assign length 4 to it but this situation
                             will never happen. Why ?
                         </p>
-                    </li>
-
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Since we are enumerating vertices in increasing order of the layers, so the vertex with
                             length 3 would actually have assigned a length of 2 since it was connected with a vertex of
                             length 1.
                         </p>
-                    </li>
-                </ul>
+                    
             </div>
-            <div class="rightcolumn">
-                <div class="IMG"> <img src="Images/bfs0.png"></div>
-                <div class="IMG"> <img src="Images/bfs1.png"> </div>
-                <div class="IMG"> <img src="Images/bfs2.png"> </div>
-            </div>
-        </div>
-        <div id="optimization" class="card">
-            <!-- Repeated element on each chapter-->
+            
             <div class="leftcolumn">
-                <h2 class="titles">
+                <h2 >
                     Optimization by Queue
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="optimization"></a></h2>
+              
+              <p class="bordertxt">
                             Lets understand how to find those levels efficiently. We will use a data structure called a
                             queue. Queue uses FIFO strategy, which is first in and first out. It behaves like a normal
                             queue in front of a ticket booth.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             I have to maintain the queue with initial entry $s$ and I have to maintain a distances[]
                             array to store the distance from $s$. Assume all vertices except $s$ has a very big distance
                             $10^9 + 7$ and s having distance 0.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                                           <p class="bordertxt">
                             First thing to do is, to extract a vertex from the queue and we process it. what do we do in
                             processing? To process the vertex I look through all the outgoing edges of this vertex and I
                             try to relax the big distance( $10^9 + 7$) from s to its neighbours
                             to something smaller.
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             In our case from $s$ we can go to $a$ , $b$ , $c$ in 1 step, so I update their distance to 1
                             and push all the updated vertices to the queue. Now the vertex $s$ is processed.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             The next step is to extract the next vertex from the queue and repeat the same procedure and
                             try to relax (make smaller ) those distances which are larger than current + 1.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             Eventually all the vertices in the connected component is assigned.
                         </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div id="proof" class="card">
-            <div class="rightcolumn">
-                <div class="IMG">
-                    <img src="Images/bfs4.png" />
-                </div>
-                <div class="IMG">
-                    <img src="Images/bfs3.png" />
-                </div>
-            </div>
-            <!-- Repeated element on each chapter-->
-            <div class="leftcolumn">
-                <h2 class="titles">
+                   
+            </div><br>
+
+             
+          <div class="leftcolumn">
+                <h2 >
                     What is the proof of correctness ?
-                </h2>
-                <ul>
-                    <li>
-                        <p>
+                <a name="proof"></a></h2>
+             <div class="picdiv"><img src="images/poc1.png" width="283" height="690" /></div>     
+            <p class="bordertxt">
                             Why does it works ?
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             There are 2 observations.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             All vertices will eventually in the queue
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             All vertices will be in the queue exactly once
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                   
+                        <p class="bordertxt">
                             There cannot be a situation where we relax a vertex and put it in the queue and relax it
                             twice and put it in the queue again.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                  
+                        <p class="bordertxt">
                             Lets say a vertex $x$ whose has an edge to a vertex $v$ which has some distance $5$ and $x$
                             has distance $6$ and there also exist a vertex $u$ which already has a distance say $3$ and
                             also want to relax (make better) distance for $x$ and relax it to 4.
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Why cannot this situation happen ?
                         </p>
-                    </li>
-                    <li>
-                        <p>
+                    
+                        <p class="bordertxt">
                             Because $u$ will be processed first than $v$ as we are processing in increasing order of
                             levels/ layers/ distances. That proves the correctness
                         </p>
-                    </li>
-                </ul>
-            </div>
-
+                        
+                    
             <div id="complexity" class="card">
                 <!-- Repeated element on each chapter-->
                 <div class="leftcolumn">
                     <h2 class="titles">
                         What is the complexity of this algorithm ?
-                    </h2>
-                    <ul>
-                        <li>
-                            <p>
+                    <a name="complexity1"></a></h2>
+                    
+                            <p class="bordertxt">
                                 Running time in $O(n + m)$ if we use adjacency list and its $O(n^2 + m)$ if we use
                                 adjacency matrices since we push all vertices will be in the queue exactly once .
                             </p>
-                        </li>
-                    </ul>
+                       
                     <div class="code">
                         <script src="https://gist.github.com/ravgupta11/ac0111e43f2e81a56e4e2e0cda1c6564.js"></script>
                     </div>
                 </div>
             </div>
-        </div>
-</body>
+    </div> 
+    </div> 
+    </div>   
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
